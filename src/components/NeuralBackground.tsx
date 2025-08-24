@@ -54,8 +54,14 @@ const NeuralBackground: React.FC = () => {
       nodesRef.current = nodes;
     };
 
+    let isVisible = true;
     const draw = () => {
       if (!ctx) return;
+      if (!isVisible) {
+        // schedule next frame but keep it light; don't run heavy math while hidden
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
       ctx.clearRect(0, 0, width, height);
 
       // subtle background tint (near-transparent)
@@ -140,29 +146,41 @@ const NeuralBackground: React.FC = () => {
       pointerRef.current.y = -9999;
     };
 
-    resize();
-    window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', handleMove);
-    window.addEventListener('mouseout', handleLeave);
-    // touch support
-    window.addEventListener('touchmove', (ev) => {
+    // touch support handler ref so it can be removed later
+    const handleTouchMove = (ev: TouchEvent) => {
       const t = ev.touches[0];
       if (t) {
         pointerRef.current.x = t.clientX;
         pointerRef.current.y = t.clientY;
         pointerRef.current.active = true;
       }
-    }, { passive: true });
-    window.addEventListener('touchend', handleLeave);
+    };
 
-    draw();
+    const handleVisibility = () => {
+      isVisible = !document.hidden;
+      if (isVisible && !animationRef.current) {
+        animationRef.current = requestAnimationFrame(draw);
+      }
+    };
+
+    resize();
+    window.addEventListener('resize', resize);
+    window.addEventListener('mousemove', handleMove);
+    window.addEventListener('mouseout', handleLeave);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleLeave);
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    animationRef.current = requestAnimationFrame(draw);
 
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', handleMove);
       window.removeEventListener('mouseout', handleLeave);
+      window.removeEventListener('touchmove', handleTouchMove as EventListener);
       window.removeEventListener('touchend', handleLeave);
+      document.removeEventListener('visibilitychange', handleVisibility);
     };
   }, []);
 

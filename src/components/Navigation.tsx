@@ -51,16 +51,25 @@ const Navigation: React.FC = () => {
 
   // ensure nav height stays in sync on mount/resize
   useEffect(() => {
-    const setNavHeight = () => {
+    const setNavHeightVar = () => {
       const el = navRef.current;
       if (el) {
         const h = Math.ceil(el.getBoundingClientRect().height);
         document.documentElement.style.setProperty('--nav-height', `${h}px`);
+        if (window.innerWidth < 720) {
+          document.documentElement.style.setProperty('--nav-height-mobile', `${h}px`);
+        }
       }
     };
-    setNavHeight();
-    window.addEventListener('resize', setNavHeight);
-    return () => window.removeEventListener('resize', setNavHeight);
+    // run on mount
+    setNavHeightVar();
+    // run again after layout stabilizes (fonts, icons)
+    const t = window.setTimeout(setNavHeightVar, 300);
+    window.addEventListener('resize', setNavHeightVar);
+    return () => {
+      window.removeEventListener('resize', setNavHeightVar);
+      clearTimeout(t);
+    };
   }, []);
 
 
@@ -75,6 +84,7 @@ const Navigation: React.FC = () => {
     setActiveMenu(menu);
   };
 
+  
   const handleMenuLeave = () => {
     closeMenuTimer.current = window.setTimeout(() => setActiveMenu(null), 120);
   };

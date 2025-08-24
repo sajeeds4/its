@@ -1,61 +1,74 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import './Hero.css';
+import styles from './Hero.module.css';
 
-const slides = [
-  {
-    title: 'Transform Your Business Digitally',
-    desc: 'Modern web solutions for every industry. Build, grow, and scale with confidence.',
-    cta: 'Get Started',
-    bg: 'hero-bg-1',
-  },
-  {
-    title: 'E-Commerce & ERP Experts',
-    desc: 'Seamless integrations, custom platforms, and automation for your business.',
-    cta: 'See Our Work',
-    bg: 'hero-bg-2',
-  },
-  {
-    title: 'Cloud, AI & Automation',
-    desc: 'Leverage the latest tech to stay ahead. Secure, scalable, and smart solutions.',
-    cta: 'Explore Services',
-    bg: 'hero-bg-3',
-  },
-  {
-    title: 'Your Success, Our Mission',
-    desc: 'Partner with a team that cares about your growth. Let’s build something great together.',
-    cta: 'Book a Free Consultation',
-    bg: 'hero-bg-4',
-  },
-];
-
-const Hero: React.FC = () => (
-  <section className="hero-slider hero-section">
-    <Swiper
-      modules={[Autoplay, Pagination, EffectFade]}
-      effect="fade"
-      loop
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
-      pagination={{ clickable: true }}
-      className="hero-swiper"
-    >
-      {slides.map((slide, idx) => (
-        <SwiperSlide key={idx}>
-          <div className={`hero-slide ${slide.bg}`}>
-            <div className="hero-content">
-              <h1>{slide.title}</h1>
-              <p>{slide.desc}</p>
-              <button className="hero-cta">{slide.cta}</button>
+const Hero: React.FC = () => {
+  return (
+    <section className={`${styles.hero} hero-section`}>
+      <Swiper
+        modules={[Autoplay, Pagination, Navigation, EffectFade]}
+        effect="fade"
+        loop
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        navigation
+        className={styles.swiper}
+      >
+        <SwiperSlide>
+          <div className={`${styles.slide} ${styles.slide1}`}>
+            <div className={styles.overlay} />
+            <div className={styles.content}>
+              <h2 className={styles.headline}>Transform Your Business with Smarter IT Solutions</h2>
+              <p className={styles.subtext}>
+                Unlock scalable IT services — from web development to enterprise automation — and accelerate your digital growth.
+              </p>
+              <div className={styles.actions}>
+                <button className={styles.primary}>Get a Quote</button>
+                <button className={styles.secondary}>Talk to an Expert</button>
+              </div>
             </div>
           </div>
         </SwiperSlide>
-      ))}
-    </Swiper>
-  </section>
-);
+
+        <SwiperSlide>
+          <div className={`${styles.slide} ${styles.slide2}`}>
+            <div className={styles.overlay} />
+            <div className={styles.content}>
+              <h2 className={styles.headline}>Scale Faster with Cloud & Automation</h2>
+              <p className={styles.subtext}>
+                Harness the power of cloud, AI, and DevOps to improve efficiency, reduce costs, and future-proof your business.
+              </p>
+              <div className={styles.actions}>
+                <button className={styles.primary}>Explore Cloud Services</button>
+                <button className={styles.secondary}>Learn More</button>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className={`${styles.slide} ${styles.slide3}`}>
+            <div className={styles.overlay} />
+            <div className={styles.content}>
+              <h2 className={styles.headline}>Future-Proof Your Technology</h2>
+              <p className={styles.subtext}>
+                Build resilient systems with cybersecurity, modern infrastructure, and continuous innovation tailored for your needs.
+              </p>
+              <div className={styles.actions}>
+                <button className={styles.primary}>Start Your Journey</button>
+                <button className={styles.secondary}>View Case Studies</button>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </section>
+  );
+};
 
 export default Hero;
