@@ -328,6 +328,58 @@
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
 }
 
+/* Metrics / Results styling (used by Shopify page) */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+}
+
+.metric-number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* Tier / price styling for Shopify */
+.tier-price,
+.price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0.5rem 0 0.75rem 0;
+}
+
+.tiers-grid, .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.tier-card, .pricing-card {
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .service-hero h1 {

@@ -25,13 +25,36 @@ const WebDevelopment: React.FC = () => {
             <p>
               We design and build production-grade websites and web applications focused on measurable business outcomes. Whether you
               need an SEO-friendly marketing site, a conversion-optimized Shopify store, or a scalable custom web application, our team
-              delivers solutions that drive traffic, convert visitors, and scale with your business.
+              delivers solutions that drive traffic, convert visitors, and grow customer lifetime value. We prioritize fast page loads,
+              accessibility, and secure integrations so your site performs well in search, provides a great user experience, and supports
+              your long-term growth plans.
             </p>
+
+            <p>
+              Our work is rooted in a results-driven approach: discovery and analytics to identify opportunities, experience-led design
+              to improve conversions, and engineering best practices to deliver maintainable, testable code. We also help teams adopt
+              observability and performance budgets so improvements are measurable after launch.
+            </p>
+
             <ul>
-              <li>Custom web development services tuned for performance and accessibility</li>
-              <li>Responsive, mobile-first designs with SEO best practices</li>
-              <li>Secure integrations with payments, CRM, and ERP systems</li>
+              <li>
+                Performance & Core Web Vitals: optimized build pipelines, image/video best practices, and server-side rendering options to
+                improve speed and SEO.
+              </li>
+              <li>
+                Conversion Optimization: data-informed UX, A/B testing readiness, and analytics instrumentation to increase leads and
+                revenue.
+              </li>
+              <li>Accessibility & WCAG compliance to reach more users and reduce legal risk.</li>
+              <li>Scalable architectures and cloud-friendly deployments to support growth and high availability.</li>
+              <li>Secure integrations with payments, CRM, and ERP systems while following security best practices.</li>
+              <li>Flexible CMS options: WordPress (headless or traditional), Shopify, and custom admin panels for editorial control.</li>
             </ul>
+
+            <p>
+              Ready to discuss requirements? See the Deliverables section below for how we structure projects and the typical milestones
+              we deliver for web development engagements.
+            </p>
           </article>
 
           {/* Services Grid */}
