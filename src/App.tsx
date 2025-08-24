@@ -59,8 +59,10 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Navigation />
-        <main className="main-content">
+  <Navigation />
+  {/* spacer to offset fixed navbar height (uses CSS var set by Navigation) */}
+  <div aria-hidden="true" style={{ height: 'var(--nav-height)' }} />
+  <main className="main-content">
           <Routes>
             {/* Main Pages */}
             <Route path="/" element={<Home />} />

@@ -34,7 +34,7 @@ const slides = [
 ];
 
 const Hero: React.FC = () => (
-  <section className="hero-slider">
+  <section className="hero-slider hero-section">
     <Swiper
       modules={[Autoplay, Pagination, EffectFade]}
       effect="fade"

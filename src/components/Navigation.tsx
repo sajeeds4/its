@@ -12,6 +12,16 @@ const Navigation: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null);
   // Scroll shadow effect
   useEffect(() => {
+    // Set CSS var for nav height so pages can offset content dynamically
+    const setNavHeightVar = () => {
+      const el = navRef.current;
+      if (el) {
+        const h = Math.ceil(el.getBoundingClientRect().height);
+        document.documentElement.style.setProperty('--nav-height', `${h}px`);
+      }
+    };
+    setNavHeightVar();
+    window.addEventListener('resize', setNavHeightVar);
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
       // If hero section is present and in view, set isHero
@@ -37,6 +47,20 @@ const Navigation: React.FC = () => {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // ensure nav height stays in sync on mount/resize
+  useEffect(() => {
+    const setNavHeight = () => {
+      const el = navRef.current;
+      if (el) {
+        const h = Math.ceil(el.getBoundingClientRect().height);
+        document.documentElement.style.setProperty('--nav-height', `${h}px`);
+      }
+    };
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight);
+    return () => window.removeEventListener('resize', setNavHeight);
   }, []);
 
 

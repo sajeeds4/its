@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Services: React.FC = () => {
   return (
-    <div className="services-page">
+  <div className="services-page" style={{ paddingTop: 'calc(var(--nav-height) + 16px)' }}>
       {/* Hero / Intro */}
       <section className="section">
         <div className="container">
