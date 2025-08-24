@@ -1,0 +1,313 @@
+/* Industry Pages Styling */
+
+.industry-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  text-align: center;
+  padding: 100px 0 80px;
+  position: relative;
+}
+
+.industry-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.industry-hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.industry-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.industry-hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.industry-overview {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.industry-overview h2 {
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.industry-overview p {
+  font-size: 1.2rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.solution-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: #3b82f6;
+}
+
+.solution-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.solution-card h3 {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.solution-card p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.solution-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.solution-card ul li {
+  color: #475569;
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.solution-card ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.case-study-highlight {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 12px;
+  padding: 3rem;
+  margin: 4rem 0;
+  text-align: center;
+  border: 1px solid #cbd5e1;
+}
+
+.case-study-highlight h3 {
+  color: #1e3a8a;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.case-study-highlight p {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.benefit-item strong {
+  display: block;
+  color: #1e3a8a;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.benefit-item p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.service-types-grid,
+.specialties-grid,
+.manufacturing-types-grid,
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-type,
+.specialty,
+.manufacturing-type,
+.challenge {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.service-type:hover,
+.specialty:hover,
+.manufacturing-type:hover,
+.challenge:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+}
+
+.service-type h4,
+.specialty h4,
+.manufacturing-type h4,
+.challenge h4 {
+  color: #1e3a8a;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-type p,
+.specialty p,
+.manufacturing-type p,
+.challenge p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.package {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  border: 2px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.package.featured {
+  border-color: #3b82f6;
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.2);
+}
+
+.package.featured::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.package h4 {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.package p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.package-price {
+  display: block;
+  color: #3b82f6;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .industry-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .industry-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .solution-card {
+    padding: 1.5rem;
+  }
+  
+  .case-study-highlight {
+    padding: 2rem;
+  }
+  
+  .benefits-grid,
+  .service-types-grid,
+  .specialties-grid,
+  .manufacturing-types-grid,
+  .challenges-grid,
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .package.featured {
+    transform: none;
+  }
+}
