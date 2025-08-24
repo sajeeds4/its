@@ -3,6 +3,7 @@ import './App.css';
 
 // Main layout components
 import Navigation from './components/Navigation';
+import NeuralBackground from './components/NeuralBackground';
 import Footer from './components/Footer';
 
 // Main pages
@@ -59,7 +60,8 @@ function App() {
   return (
     <Router>
       <div className="app">
-  <Navigation />
+        <NeuralBackground />
+        <Navigation />
   {/* spacer to offset fixed navbar height (uses CSS var set by Navigation) */}
   <div aria-hidden="true" style={{ height: 'var(--nav-height)' }} />
   <main className="main-content">
