@@ -5,7 +5,7 @@ type Feature = {
   iconEmoji?: string;
   title: string;
   description: string;
-  bullets?: string[];
+  bullets?: readonly string[];
 };
 
 export const FeatureGrid: React.FC<{ features: readonly Feature[] }> = ({ features }) => {
