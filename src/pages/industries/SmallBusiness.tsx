@@ -3,9 +3,9 @@ import React from 'react';
 const SmallBusiness: React.FC = () => {
   return (
     <div className="page-container">
-      <div className="hero-section industry-hero">
+      <div className="hero-section service-hero">
         <div className="hero-content">
-          <h1>Small & Medium Business Solutions</h1>
+          <h1 id="smb-title">Small & Medium Business Solutions</h1>
           <p>Affordable, scalable technology solutions designed specifically for small and medium businesses to compete with larger enterprises.</p>
         </div>
       </div>
@@ -17,9 +17,9 @@ const SmallBusiness: React.FC = () => {
             <p>Small and medium businesses deserve access to the same powerful technology as large enterprises. Our solutions are designed to be affordable, easy to implement, and scalable as your business grows.</p>
           </div>
 
-          <div className="solutions-grid">
-            <div className="solution-card">
-              <div className="solution-icon">💼</div>
+          <div className="features-grid">
+            <div className="feature-card glass-card">
+              <div className="feature-icon">📋</div>
               <h3>Business Management Systems</h3>
               <p>All-in-one business management solutions that integrate CRM, project management, accounting, and operations in one platform.</p>
               <ul>
@@ -30,8 +30,8 @@ const SmallBusiness: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">🌐</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🌐</div>
               <h3>Professional Websites</h3>
               <p>Custom websites and e-commerce solutions that help small businesses establish a strong online presence and compete digitally.</p>
               <ul>
@@ -42,8 +42,8 @@ const SmallBusiness: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">☁️</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">☁️</div>
               <h3>Cloud Migration</h3>
               <p>Affordable cloud solutions that reduce IT costs, improve collaboration, and provide enterprise-level security for small businesses.</p>
               <ul>
@@ -54,8 +54,8 @@ const SmallBusiness: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">📱</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">📱</div>
               <h3>Digital Marketing Tools</h3>
               <p>Integrated digital marketing platforms that help small businesses reach customers, manage social media, and track marketing ROI.</p>
               <ul>
@@ -66,8 +66,8 @@ const SmallBusiness: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">🔐</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🔐</div>
               <h3>Cybersecurity</h3>
               <p>Enterprise-grade cybersecurity solutions tailored for small businesses, protecting against threats without breaking the budget.</p>
               <ul>
@@ -78,8 +78,8 @@ const SmallBusiness: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">📊</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">📊</div>
               <h3>Business Intelligence</h3>
               <p>Simple yet powerful analytics tools that help small business owners make data-driven decisions and identify growth opportunities.</p>
               <ul>

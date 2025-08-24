@@ -3,9 +3,9 @@ import React from 'react';
 const ProfessionalServices: React.FC = () => {
   return (
     <div className="page-container">
-      <div className="hero-section industry-hero">
+      <div className="hero-section service-hero">
         <div className="hero-content">
-          <h1>Professional Services Technology</h1>
+          <h1 id="professional-title">Professional Services Technology</h1>
           <p>Empowering law firms, accounting practices, consulting agencies, and professional service providers with technology solutions that enhance productivity and client satisfaction.</p>
         </div>
       </div>
@@ -17,11 +17,11 @@ const ProfessionalServices: React.FC = () => {
             <p>Professional service firms need specialized technology that helps them manage clients efficiently, deliver exceptional service, and scale their operations. Our solutions are designed specifically for the unique needs of professional service providers.</p>
           </div>
 
-          <div className="solutions-grid">
-            <div className="solution-card">
-              <div className="solution-icon">⚖️</div>
+          <div className="features-grid">
+            <div className="feature-card glass-card">
+              <div className="feature-icon">⚖️</div>
               <h3>Client Management Systems</h3>
-              <p>Comprehensive CRM solutions designed for professional services, managing client relationships, projects, and communications in one platform.</p>
+              <p>CRM solutions tailored for professional services to manage clients, projects, and communication.</p>
               <ul>
                 <li>Client portal access</li>
                 <li>Document management</li>
@@ -30,10 +30,10 @@ const ProfessionalServices: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">⏰</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">⏰</div>
               <h3>Time & Billing Automation</h3>
-              <p>Advanced time tracking and automated billing systems that ensure accurate invoicing and improve cash flow for professional service firms.</p>
+              <p>Automated time tracking and billing to improve invoicing accuracy and cash flow.</p>
               <ul>
                 <li>Automated time tracking</li>
                 <li>Expense management</li>
@@ -42,10 +42,10 @@ const ProfessionalServices: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">📄</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">📄</div>
               <h3>Document Management</h3>
-              <p>Secure, cloud-based document management systems with version control, collaboration tools, and compliance features.</p>
+              <p>Secure, cloud-based document management with version control and collaboration features.</p>
               <ul>
                 <li>Version control</li>
                 <li>Security & encryption</li>
@@ -54,10 +54,10 @@ const ProfessionalServices: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">🔐</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🔐</div>
               <h3>Security & Compliance</h3>
-              <p>Enterprise-grade security solutions ensuring client confidentiality and meeting industry-specific compliance requirements.</p>
+              <p>Enterprise-grade security ensuring client confidentiality and compliance.</p>
               <ul>
                 <li>Data encryption</li>
                 <li>Access controls</li>
@@ -66,10 +66,10 @@ const ProfessionalServices: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">📊</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">📊</div>
               <h3>Business Intelligence</h3>
-              <p>Analytics and reporting tools that provide insights into firm performance, profitability, and growth opportunities.</p>
+              <p>Analytics to monitor firm performance, profitability, and resource utilization.</p>
               <ul>
                 <li>Financial dashboards</li>
                 <li>Performance metrics</li>
@@ -78,10 +78,10 @@ const ProfessionalServices: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">🤝</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🤝</div>
               <h3>Client Collaboration</h3>
-              <p>Secure client portals and collaboration platforms that improve communication and project transparency.</p>
+              <p>Secure collaboration tools and client portals for better communication and transparency.</p>
               <ul>
                 <li>Secure file sharing</li>
                 <li>Real-time messaging</li>

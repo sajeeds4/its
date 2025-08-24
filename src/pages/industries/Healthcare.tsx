@@ -3,9 +3,9 @@ import React from 'react';
 const Healthcare: React.FC = () => {
   return (
     <div className="page-container">
-      <div className="hero-section industry-hero">
+      <div className="hero-section service-hero">
         <div className="hero-content">
-          <h1>Healthcare Technology Solutions</h1>
+          <h1 id="healthcare-title">Healthcare Technology Solutions</h1>
           <p>Transforming healthcare delivery with secure, compliant, and innovative technology solutions that improve patient outcomes and streamline operations.</p>
         </div>
       </div>
@@ -17,11 +17,11 @@ const Healthcare: React.FC = () => {
             <p>Healthcare organizations face unique challenges requiring specialized technology solutions. We provide HIPAA-compliant systems that enhance patient care, improve operational efficiency, and ensure regulatory compliance.</p>
           </div>
 
-          <div className="solutions-grid">
-            <div className="solution-card">
-              <div className="solution-icon">🏥</div>
+          <div className="features-grid">
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🏥</div>
               <h3>Electronic Health Records (EHR)</h3>
-              <p>Comprehensive EHR systems that streamline patient data management, improve care coordination, and ensure HIPAA compliance.</p>
+              <p>Comprehensive EHR systems to streamline patient data, improve coordination, and maintain compliance.</p>
               <ul>
                 <li>Patient data integration</li>
                 <li>Clinical decision support</li>
@@ -30,10 +30,10 @@ const Healthcare: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">📱</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">📱</div>
               <h3>Telemedicine Platforms</h3>
-              <p>Secure telehealth solutions that expand access to care, reduce costs, and improve patient satisfaction through virtual consultations.</p>
+              <p>Secure telehealth platforms for virtual care, remote monitoring, and prescription management.</p>
               <ul>
                 <li>Video consultations</li>
                 <li>Remote monitoring</li>
@@ -42,10 +42,10 @@ const Healthcare: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">📊</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">📊</div>
               <h3>Practice Management</h3>
-              <p>Integrated practice management systems that handle scheduling, billing, insurance claims, and patient communications.</p>
+              <p>Integrated systems for scheduling, billing, claims, and patient communications.</p>
               <ul>
                 <li>Appointment scheduling</li>
                 <li>Insurance verification</li>
@@ -54,10 +54,10 @@ const Healthcare: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">🔐</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🔐</div>
               <h3>HIPAA Compliance & Security</h3>
-              <p>Enterprise-grade security solutions ensuring patient data protection and full HIPAA compliance with audit trails and encryption.</p>
+              <p>Enterprise-grade security with encryption, access controls, and audit trails.</p>
               <ul>
                 <li>Data encryption</li>
                 <li>Access controls</li>
@@ -66,10 +66,10 @@ const Healthcare: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">🤖</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🤖</div>
               <h3>AI-Powered Diagnostics</h3>
-              <p>Machine learning solutions that assist in diagnosis, predict patient outcomes, and identify potential health risks early.</p>
+              <p>Machine learning tools to assist diagnosis, predict outcomes, and surface clinical insights.</p>
               <ul>
                 <li>Diagnostic assistance</li>
                 <li>Risk prediction</li>
@@ -78,10 +78,10 @@ const Healthcare: React.FC = () => {
               </ul>
             </div>
 
-            <div className="solution-card">
-              <div className="solution-icon">☁️</div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">☁️</div>
               <h3>Cloud Infrastructure</h3>
-              <p>HIPAA-compliant cloud solutions that provide scalability, reliability, and disaster recovery for healthcare applications.</p>
+              <p>Scalable, HIPAA-compliant cloud hosting with disaster recovery and 24/7 support.</p>
               <ul>
                 <li>Scalable infrastructure</li>
                 <li>Disaster recovery</li>
