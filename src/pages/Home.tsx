@@ -1,32 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
+import Hero from '../components/Hero';
 
 const Home: React.FC = () => {
   return (
     <div className="home">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-text">
-              <h1>Transform Your Business with Innovative Technology Solutions</h1>
-              <p>
-                We deliver cutting-edge IT services including web development, ERP systems, 
-                cloud solutions, and AI automation to help your business thrive in the digital age.
-              </p>
-              <div className="hero-buttons">
-                <a href="/services" className="btn btn-primary">Explore Services</a>
-                <a href="/contact" className="btn btn-secondary">Get Started</a>
-              </div>
-            </div>
-            <div className="hero-image">
-              <div className="hero-graphic">
-                <i className="fas fa-laptop-code"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* Hero Section (Slider) */}
+  <Hero />
 
       {/* Services Overview */}
       <section className="section section-gray">
@@ -38,30 +19,24 @@ const Home: React.FC = () => {
           
           <div className="grid grid-3">
             <div className="card">
-              <div className="card-icon">
-                <i className="fas fa-globe"></i>
-              </div>
+              <div className="card-icon"><i className="fas fa-globe"></i></div>
               <h3>Web Development</h3>
-              <p>Custom websites, e-commerce platforms, and web applications using WordPress, Shopify, and modern frameworks.</p>
-              <a href="/services/web-development" className="btn btn-outline">Learn More</a>
+              <p>Custom websites and e-commerce solutions that help you establish a strong online presence and drive business growth.</p>
+              <Link to="/services/web-development" className="btn btn-outline">Learn More</Link>
             </div>
             
             <div className="card">
-              <div className="card-icon">
-                <i className="fas fa-cogs"></i>
-              </div>
+              <div className="card-icon"><i className="fas fa-cogs"></i></div>
               <h3>ERP Solutions</h3>
-              <p>Streamline your operations with Odoo, NextERP, and custom enterprise resource planning systems.</p>
-              <a href="/services/erp" className="btn btn-outline">Learn More</a>
+              <p>Streamline your business operations with integrated ERP systems that connect all aspects of your business.</p>
+              <Link to="/services/erp" className="btn btn-outline">Learn More</Link>
             </div>
             
             <div className="card">
-              <div className="card-icon">
-                <i className="fas fa-cloud"></i>
-              </div>
-              <h3>Cloud & AI Solutions</h3>
-              <p>Migrate to the cloud and automate processes with AI-powered solutions and smart integrations.</p>
-              <a href="/services/cloud" className="btn btn-outline">Learn More</a>
+              <div className="card-icon"><i className="fas fa-cloud"></i></div>
+              <h3>Cloud & IT Services</h3>
+              <p>Secure, reliable cloud infrastructure and IT services that keep your business running smoothly.</p>
+              <Link to="/services/cloud" className="btn btn-outline">Learn More</Link>
             </div>
           </div>
         </div>
