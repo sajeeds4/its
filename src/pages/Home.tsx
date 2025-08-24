@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import './services/Services.css';
 import Hero from '../components/Hero';
 
 const Home: React.FC = () => {
@@ -17,27 +18,19 @@ const Home: React.FC = () => {
             <p>Comprehensive IT solutions tailored to your business needs</p>
           </div>
           
-          <div className="grid grid-3">
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-globe"></i></div>
-              <h3>Web Development</h3>
-              <p>Custom websites and e-commerce solutions that help you establish a strong online presence and drive business growth.</p>
-              <Link to="/services/web-development" className="btn btn-outline">Learn More</Link>
-            </div>
-            
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-cogs"></i></div>
-              <h3>ERP Solutions</h3>
-              <p>Streamline your business operations with integrated ERP systems that connect all aspects of your business.</p>
-              <Link to="/services/erp" className="btn btn-outline">Learn More</Link>
-            </div>
-            
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-cloud"></i></div>
-              <h3>Cloud & IT Services</h3>
-              <p>Secure, reliable cloud infrastructure and IT services that keep your business running smoothly.</p>
-              <Link to="/services/cloud" className="btn btn-outline">Learn More</Link>
-            </div>
+          <div className="grid services-grid">
+            {[
+              { id: 'web-development', title: 'Web Development', desc: 'Custom websites and e-commerce solutions that help you establish a strong online presence and drive business growth.', link: '/services/web-development', icon: 'fas fa-globe' },
+              { id: 'erp', title: 'ERP Solutions', desc: 'Streamline your business operations with integrated ERP systems that connect all aspects of your business.', link: '/services/erp', icon: 'fas fa-cogs' },
+              { id: 'cloud', title: 'Cloud & IT Services', desc: 'Secure, reliable cloud infrastructure and IT services that keep your business running smoothly.', link: '/services/cloud', icon: 'fas fa-cloud' }
+            ].map((s) => (
+              <div className="card" key={s.id}>
+                <div className="card-icon"><i className={s.icon}></i></div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+                <Link to={s.link} className="btn btn-outline">Learn More</Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>

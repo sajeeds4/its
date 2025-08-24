@@ -95,9 +95,9 @@
 
 .feature-card {
   background: white;
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 1.6rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.03);
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   display: flex;
@@ -155,16 +155,78 @@
 
 .feature-card h3 {
   color: var(--dark);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .feature-card p {
   color: var(--gray);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.6;
   flex-grow: 1;
+}
+
+/* Ensure services-grid card text is visible and not affected by 3D transforms */
+.services-grid .card {
+  color: var(--dark);
+}
+.services-grid .card h3,
+.services-grid .card p {
+  color: var(--dark);
+  color: #111111 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
+.feature-card h3, .feature-card p {
+  transform: none !important;
+  -webkit-transform: none !important;
+  color: #111111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
+
+/* Services grid used on the main Services overview page */
+.services-grid {
+  display: grid;
+  gap: 1rem;
+  /* mobile first: 1 column */
+  grid-template-columns: 1fr;
+}
+
+/* Slightly smaller card style when used in services grid */
+.services-grid .card {
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+@media (min-width: 640px) {
+  /* tablets: 2 columns */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* desktops: 3 or 4 depending on width */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .cta-button {
@@ -238,38 +300,23 @@
   font-size: 1.1rem;
 }
 
-/* Card 3D Effect */
+/* Card effect: simplified (no 3D) to avoid clipping/backface issues */
 .card-3d {
-  transform-style: preserve-3d;
-  perspective: 1000px;
+  transform: none;
+  perspective: none;
 }
 
 .card-3d:hover {
-  transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
 }
 
 .card-3d .feature-icon,
 .card-3d h3,
 .card-3d p,
 .card-3d .cta-button {
-  transform: translateZ(30px);
-  transition: transform 0.5s ease;
-}
-
-.card-3d:hover .feature-icon {
-  transform: translateZ(50px);
-}
-
-.card-3d:hover h3 {
-  transform: translateZ(40px);
-}
-
-.card-3d:hover p {
-  transform: translateZ(30px);
-}
-
-.card-3d:hover .cta-button {
-  transform: translateZ(40px);
+  transform: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Glass Card */

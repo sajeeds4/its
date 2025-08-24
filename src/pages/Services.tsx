@@ -1,9 +1,69 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './services/Services.css';
 
 const Services: React.FC = () => {
+  const services = [
+    {
+      id: 'web-development',
+      title: 'Web Development',
+      desc: 'Custom websites and web apps (WordPress, Shopify, Wix, React/Vue) built for performance and conversions.',
+      link: '/services/web-development',
+      icon: 'fas fa-globe'
+    },
+    {
+      id: 'erp',
+      title: 'ERP Solutions',
+      desc: 'Odoo, NextERP, RepairShppr and LoadDepot implementations to streamline inventory, finance and operations.',
+      link: '/services/erp',
+      icon: 'fas fa-cogs'
+    },
+    {
+      id: 'office365-gsuite',
+      title: 'Office 365 & Google Workspace',
+      desc: 'Migrations, configuration and management for Microsoft 365 and Google Workspace to boost team productivity.',
+      link: '/services/office365-gsuite',
+      icon: 'fas fa-envelope'
+    },
+    {
+      id: 'ai-automation',
+      title: 'AI for Automation',
+      desc: 'AI-driven automation and insights to cut costs and accelerate workflows.',
+      link: '/services/ai-automation',
+      icon: 'fas fa-robot'
+    },
+    {
+      id: 'cloud',
+      title: 'Cloud Solutions',
+      desc: 'Secure, scalable cloud architecture and migrations (AWS / Azure / GCP).',
+      link: '/services/cloud',
+      icon: 'fas fa-cloud'
+    },
+    {
+      id: 'networking',
+      title: 'Networking',
+      desc: 'Office and remote networking — secure Wi‑Fi, switches, VPNs and uptime-focused designs.',
+      link: '/services/networking',
+      icon: 'fas fa-network-wired'
+    },
+    {
+      id: 'data-migration-recovery',
+      title: 'Data Migration & Disaster Recovery',
+      desc: 'Backups, migrations and DR planning to keep business-critical data safe and available.',
+      link: '/services/data-migration-recovery',
+      icon: 'fas fa-database'
+    },
+    {
+      id: 'app-development',
+      title: 'App Development',
+      desc: 'Native and cross-platform mobile apps that extend your digital product offering.',
+      link: '/services/app-development',
+      icon: 'fas fa-mobile-alt'
+    }
+  ];
+
   return (
-  <div className="services-page">
+    <div className="services-page">
       {/* Hero / Intro */}
       <section className="section">
         <div className="container">
@@ -15,84 +75,18 @@ const Services: React.FC = () => {
             </p>
           </div>
 
-          {/* Our Core Services (grid overview) */}
-          <div className="grid grid-2">
-            {/* Web Development */}
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-globe"></i></div>
-              <h3>Web Development</h3>
-              <p>
-                Custom websites and online solutions tailored to your business needs. Whether it’s WordPress, Shopify, Wix, or a
-                custom-built web app, we create user-friendly, scalable platforms that help your business grow online.
-              </p>
-              <Link to="/services/web-development" className="btn btn-primary">Learn more →</Link>
-            </div>
-
-            {/* ERP Solutions */}
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-cogs"></i></div>
-              <h3>ERP Solutions</h3>
-              <p>
-                We implement and optimize ERP systems like Odoo, NextERP, RepairShppr, and LoadDepot to simplify business management.
-                From inventory to finance, our ERP solutions ensure your operations run smoothly and efficiently.
-              </p>
-              <Link to="/services/erp" className="btn btn-primary">Learn more →</Link>
-            </div>
-
-            {/* Office 365 & Google Workspace */}
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-envelope"></i></div>
-              <h3>Office 365 & Google Workspace</h3>
-              <p>
-                Boost productivity with secure email, calendars, and collaboration tools. We help you set up and manage Microsoft 365 and
-                Google Workspace so your team can work smarter, not harder.
-              </p>
-              <Link to="/services/office365-gsuite" className="btn btn-primary">Learn more →</Link>
-            </div>
-
-            {/* AI for Automation */}
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-robot"></i></div>
-              <h3>AI for Automation</h3>
-              <p>
-                Leverage the power of AI to automate repetitive tasks, generate insights, and optimize workflows. We design AI-driven
-                solutions to improve efficiency and cut costs.
-              </p>
-              <Link to="/services/ai-automation" className="btn btn-primary">Learn more →</Link>
-            </div>
-
-            {/* Cloud Solutions */}
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-cloud"></i></div>
-              <h3>Cloud Solutions</h3>
-              <p>
-                Scale your business with cloud infrastructure that is secure, reliable, and cost-effective. We help you migrate, deploy, and
-                maintain cloud environments on AWS, Azure, and Google Cloud.
-              </p>
-              <Link to="/services/cloud" className="btn btn-primary">Learn more →</Link>
-            </div>
-
-            {/* Networking */}
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-network-wired"></i></div>
-              <h3>Networking</h3>
-              <p>
-                Robust networking solutions for offices and remote teams. From secure Wi‑Fi setups to enterprise-level networks, we ensure
-                your team stays connected with maximum uptime.
-              </p>
-              <Link to="/services/networking" className="btn btn-primary">Learn more →</Link>
-            </div>
-
-            {/* Data Migration & Disaster Recovery */}
-            <div className="card">
-              <div className="card-icon"><i className="fas fa-database"></i></div>
-              <h3>Data Migration & Disaster Recovery</h3>
-              <p>
-                Protect your business with reliable backup, migration, and disaster recovery solutions. We safeguard your data and ensure
-                business continuity when it matters most.
-              </p>
-              <Link to="/services/data-migration-recovery" className="btn btn-primary">Learn more →</Link>
-            </div>
+          {/* Our Core Services (dynamic grid overview) */}
+          <div className="grid services-grid">
+            {services.map((s) => (
+              <div className="card" key={s.id}>
+                <div className="card-icon" aria-hidden>
+                  <i className={s.icon}></i>
+                </div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+                <Link to={s.link} className="btn btn-outline">Learn more →</Link>
+              </div>
+            ))}
           </div>
 
           {/* Closing Section */}

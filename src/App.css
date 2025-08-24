@@ -356,6 +356,21 @@ h1, h2, h3, h4, h5, h6, section {
   transition: all 0.5s ease;
 }
 
+/* Global safeguard: ensure card text is visible even if 3D transforms are present elsewhere */
+.card h3,
+.card p,
+.card .card-content,
+.feature-card h3,
+.feature-card p {
+  color: #111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
+
 .card-3d:hover {
   transform: rotateY(10deg) rotateX(5deg);
 }
