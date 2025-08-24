@@ -25,7 +25,7 @@ To enable automatic deployment, add these secrets to your GitHub repository:
 
 ```
 VERCEL_TOKEN=your_vercel_token
-VERCEL_ORG_ID=team_JoV3JXlTETx6ElQ6Fftc24eU
+VERCEL_USER_ID=npOMcFo9Bs5GoL9LueisfAnr
 VERCEL_PROJECT_ID=prj_84F59JV5TP5MiKKW2gLXVrFrJqFd
 ```
 
