@@ -87,30 +87,19 @@ const Home: React.FC = () => {
             <p>Our proven methodology for delivering exceptional results</p>
           </div>
           
-          <div className="process-grid">
-            <div className="process-step">
-              <div className="process-number">01</div>
-              <h3>Understand</h3>
-              <p>We analyze your business needs and current technology landscape</p>
-            </div>
-            
-            <div className="process-step">
-              <div className="process-number">02</div>
-              <h3>Design</h3>
-              <p>Create tailored solutions that align with your goals and budget</p>
-            </div>
-            
-            <div className="process-step">
-              <div className="process-number">03</div>
-              <h3>Deploy</h3>
-              <p>Implement solutions with minimal disruption to your operations</p>
-            </div>
-            
-            <div className="process-step">
-              <div className="process-number">04</div>
-              <h3>Support</h3>
-              <p>Provide ongoing maintenance and optimization services</p>
-            </div>
+          <div className="process-grid responsive-steps">
+            {[
+              { num: '01', title: 'Understand', desc: 'We analyze your business needs and current technology landscape' },
+              { num: '02', title: 'Design', desc: 'Create tailored solutions that align with your goals and budget' },
+              { num: '03', title: 'Deploy', desc: 'Implement solutions with minimal disruption to your operations' },
+              { num: '04', title: 'Support', desc: 'Provide ongoing maintenance and optimization services' }
+            ].map((s) => (
+              <div className="process-step centered" key={s.num}>
+                <div className="process-number badge">{s.num}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

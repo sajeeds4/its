@@ -1,0 +1,33 @@
+:root{--accent:#6c63ff}
+
+.about-hero{padding:3.2rem 0;margin-bottom:1.4rem}
+.about-hero h1{font-size:2rem;margin-bottom:0.4rem}
+.about-hero .lead{font-size:1.05rem;color:#374151;margin-bottom:0.6rem}
+
+.about-main{padding-bottom:3rem}
+.story p{color:#334155;line-height:1.6}
+.offerings{margin:0.6rem 0 1rem 1rem}
+.offerings li{margin:0.4rem 0}
+
+.mission-vision{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0}
+.mv-col h3{margin-top:0}
+
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:0.8rem}
+.why-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:10px}
+.why-card h4{margin:0 0 0.4rem 0}
+.muted{color:#6b7280}
+
+.adv-table-wrap{overflow:auto;margin-top:0.6rem}
+.adv-table{width:100%;border-collapse:collapse}
+.adv-table th,.adv-table td{padding:0.7rem 1rem;border-bottom:1px solid rgba(0,0,0,0.04);text-align:left}
+
+.adv-feature{display:flex;align-items:center;gap:10px}
+.adv-icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px}
+.adv-label{font-weight:700}
+
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:0.8rem}
+.value-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:8px}
+
+.final-cta{text-align:center;padding:1.4rem;margin-top:1.5rem}
+
+@media(max-width:900px){.mission-vision{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:repeat(2,1fr)}.about-hero h1{font-size:1.6rem}}

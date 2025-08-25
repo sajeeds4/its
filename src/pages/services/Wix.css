@@ -1,0 +1,55 @@
+:root{--accent:#6c63ff}
+
+/* Hero */
+.wix-hero{padding:5rem 0;margin-bottom:2.5rem}
+.wix-hero h1{font-size:2.6rem;margin-bottom:0.6rem;text-align:center}
+.wix-hero .lead{font-size:1.08rem;color:#374151;margin-bottom:1rem;max-width:70%;margin-left:auto;margin-right:auto}
+
+/* Make the main area center aligned by default */
+.wix-main{text-align:center}
+.wix-main section{padding:2.5rem 0}
+.wix-main h2{font-size:2rem;margin-bottom:0.6rem;text-align:center}
+
+/* Offerings grid */
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:1.5rem;justify-items:center}
+.offer-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1.5rem;border-radius:12px;text-align:center}
+.offer-head{display:flex;align-items:center;gap:12px;justify-content:center}
+.offer-head .ico{width:36px;height:36px}
+.offer-card p{display:inline-block;text-align:left;max-width:36rem;margin:0.6rem 0}
+
+/* Plans table */
+.plans-wrap{margin-top:1.5rem}
+.plans-table{width:100%;border-collapse:collapse;margin:0 auto}
+.plans-table th,.plans-table td{padding:0.8rem 1rem;border-bottom:1px solid rgba(0,0,0,0.04);text-align:left}
+.plans-table .highlight{background:linear-gradient(90deg, rgba(108,99,255,0.04), transparent)}
+
+/* Packages */
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;justify-items:center}
+.package-card{padding:1.25rem;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);text-align:center}
+.package-card.featured{border:1px solid rgba(108,99,255,0.08);box-shadow:0 10px 26px rgba(16,24,40,0.06)}
+.package-card h4{margin-bottom:0.8rem}
+.package-card .muted{margin-bottom:1rem}
+.package-card ul{display:inline-block;text-align:left;max-width:28rem;padding-left:1.15rem;margin:0.6rem 0}
+
+/* Why grid */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem;justify-items:center}
+.why-item{text-align:center;max-width:36rem}
+
+/* Compare table centered */
+.compare-wrap{overflow:auto;margin-top:1.5rem}
+.compare-table{width:100%;border-collapse:collapse;margin:0 auto}
+.compare-table th,.compare-table td{padding:0.6rem 1rem;border-bottom:1px solid rgba(0,0,0,0.04)}
+
+/* Final CTA */
+.final-cta{text-align:center;padding:2rem;margin-top:2.5rem}
+
+/* Responsive adjustments */
+@media(max-width:980px){
+  .offer-grid{grid-template-columns:repeat(2,1fr)}
+  .package-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .wix-hero{padding:3rem 0}
+  .wix-hero h1{font-size:1.9rem}
+  .wix-hero .lead{max-width:100%}
+  .offer-card p, .package-card ul{max-width:100%}
+}

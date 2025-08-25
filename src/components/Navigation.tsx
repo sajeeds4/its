@@ -218,6 +218,7 @@ const Navigation: React.FC = () => {
           <Link to="/about" onClick={toggleMobileMenu}>About</Link>
           <Link to="/contact" onClick={toggleMobileMenu}>Contact</Link>
           <Link to="/quick-quote" onClick={toggleMobileMenu} className="main-cta">Get a Quote</Link>
+          <Link to="/services/web-development/wix" onClick={toggleMobileMenu}>Wix</Link>
         </div>
       )}
     </nav>
