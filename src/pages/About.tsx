@@ -133,6 +133,7 @@ const About: React.FC = () => {
         </section>
       </main>
     </div>
+      </div>
     </>
   );
 };
