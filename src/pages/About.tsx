@@ -1,10 +1,13 @@
 import React from 'react';
+import PageHelmet from '../components/PageHelmet';
 import './About.css';
 import { MapPin, Zap, Shield, TrendingUp } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <div className="about-page page-container">
+    <>
+      <PageHelmet title="About | Aethrix Systems" description="Learn about Aethrix Systems, our mission, values, and the team driving innovative technology solutions for businesses." />
+      <div className="about-page page-container">
       <header className="about-hero glass-card">
         <div className="container">
           <h1>About Aethrix Systems</h1>
@@ -130,6 +133,8 @@ const About: React.FC = () => {
         </section>
       </main>
     </div>
+      </div>
+    </>
   );
 };
 
