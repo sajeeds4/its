@@ -1,5 +1,4 @@
 import React from 'react';
-import PageHelmet from '../components/PageHelmet';
 import { Link } from 'react-router-dom';
 import './services/Services.css';
 
@@ -64,9 +63,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <>
-      <PageHelmet title="Services | Aethrix Systems" description="Explore our full range of IT services including web development, ERP, cloud, and AI automation tailored for your business." />
-      <div className="services-page page-container">
+    <div className="services-page">
       {/* Hero / Intro */}
       <section className="section">
         <div className="container">
@@ -147,8 +144,7 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
-      </div>
-    </>
+    </div>
   );
 };
 

@@ -1,45 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import PageHelmet from "../components/PageHelmet";
 import './services/Services.css';
 import Hero from '../components/Hero';
 
 const Home: React.FC = () => {
   return (
-    <>
-      <PageHelmet
-        title="Aethrix Systems | Innovative Technology Solutions"
-        description="Transform your business with our comprehensive IT solutions including web development, ERP systems, cloud solutions, and AI automation services."
-      />
-      <div className="home-container neural-bg">
-        {/* Hero Section (Slider) */}
-        <Hero />
+    <div className="home">
+  {/* Hero Section (Slider) */}
+  <Hero />
 
-        {/* Services Overview */}
-        <section className="section section-gray">
-          <div className="container">
-            <div className="section-header text-center">
-              <h2>Our Core Services</h2>
-              <p>Comprehensive IT solutions tailored to your business needs</p>
-            </div>
-            <div className="services-grid">
-              {[
-                {
-                  id: 'website-development',
-                  title: 'Website Development',
-                  desc: 'All-in-one website solutions: custom sites, WordPress, Shopify, Wix, e-commerce, and more — tailored for your business.',
-                  link: '/services/web-development',
-                  icon: 'fas fa-globe'
-                },
-                { id: 'erp', title: 'ERP Solutions', desc: 'Streamline your business operations with integrated ERP systems that connect all aspects of your business.', link: '/services/erp', icon: 'fas fa-cogs' },
-                { id: 'cloud', title: 'Cloud & IT Services', desc: 'Secure, reliable cloud infrastructure and IT services that keep your business running smoothly.', link: '/services/cloud', icon: 'fas fa-cloud' },
-                { id: 'networking', title: 'Networking', desc: 'Robust, secure networking for offices, remote teams, and hybrid work.', link: '/services/networking', icon: 'fas fa-network-wired' },
-                { id: 'data-migration', title: 'Data Migration & Recovery', desc: 'Safe, efficient data migration and disaster recovery solutions.', link: '/services/data-migration-recovery', icon: 'fas fa-database' },
-                { id: 'ai-automation', title: 'AI & Automation', desc: 'AI-powered automation, chatbots, and workflow optimization.', link: '/services/ai-automation', icon: 'fas fa-robot' },
-                { id: 'office365', title: 'Office365 & GSuite', desc: 'Cloud productivity, email, and collaboration setup and support.', link: '/services/office365-gsuite', icon: 'fas fa-envelope-open-text' }
-              ].map((s) => (
-                <div className="card" key={s.id}>
+      {/* Services Overview */}
+      <section className="section section-gray">
+        <div className="container">
+          <div className="section-header text-center">
+            <h2>Our Core Services</h2>
+            <p>Comprehensive IT solutions tailored to your business needs</p>
+          </div>
+          
+          <div className="services-grid">
+            {[
+              {
+                id: 'website-development',
+                title: 'Website Development',
+                desc: 'All-in-one website solutions: custom sites, WordPress, Shopify, Wix, e-commerce, and more — tailored for your business.',
+                link: '/services/web-development',
+                icon: 'fas fa-globe'
+              },
+              { id: 'erp', title: 'ERP Solutions', desc: 'Streamline your business operations with integrated ERP systems that connect all aspects of your business.', link: '/services/erp', icon: 'fas fa-cogs' },
+              { id: 'cloud', title: 'Cloud & IT Services', desc: 'Secure, reliable cloud infrastructure and IT services that keep your business running smoothly.', link: '/services/cloud', icon: 'fas fa-cloud' },
+              { id: 'networking', title: 'Networking', desc: 'Robust, secure networking for offices, remote teams, and hybrid work.', link: '/services/networking', icon: 'fas fa-network-wired' },
+              { id: 'data-migration', title: 'Data Migration & Recovery', desc: 'Safe, efficient data migration and disaster recovery solutions.', link: '/services/data-migration-recovery', icon: 'fas fa-database' },
+              { id: 'ai-automation', title: 'AI & Automation', desc: 'AI-powered automation, chatbots, and workflow optimization.', link: '/services/ai-automation', icon: 'fas fa-robot' },
+              { id: 'office365', title: 'Office365 & GSuite', desc: 'Cloud productivity, email, and collaboration setup and support.', link: '/services/office365-gsuite', icon: 'fas fa-envelope-open-text' }
+            ].map((s) => (
+              <div className="card" key={s.id}>
                 <div className="card-icon"><i className={s.icon}></i></div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
@@ -134,8 +129,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      </div>
-    </>
+    </div>
   );
 };
 
