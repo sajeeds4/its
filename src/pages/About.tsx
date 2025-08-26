@@ -7,16 +7,16 @@ const About: React.FC = () => {
     <div className="about-page page-container">
       <header className="about-hero glass-card">
         <div className="container">
-          <h1>About ITS – Innovative Technology Solutions</h1>
+          <h1>About Aethrix Systems</h1>
           <p className="lead">Transforming Businesses with Innovation, Security, and Agility</p>
-          <p>At ITS, we believe technology should empower businesses, not complicate them. We combine deep industry expertise with modern IT solutions to help organizations grow, adapt, and stay secure in an ever-changing digital world.</p>
+          <p>At Aethrix Systems, we believe technology should empower businesses, not complicate them. We combine deep industry expertise with modern IT solutions to help organizations grow, adapt, and stay secure in an ever-changing digital world.</p>
         </div>
       </header>
 
       <main className="container about-main">
         <section className="story">
           <h2>Our Story</h2>
-          <p>Founded on Long Island, ITS started with a simple mission: to bring <strong>enterprise-level IT services</strong> within reach of small and medium-sized businesses.</p>
+          <p>Founded on Long Island, Aethrix Systems started with a simple mission: to bring <strong>enterprise-level IT services</strong> within reach of small and medium-sized businesses.</p>
           <p>Over the years, we’ve grown into a <strong>full-stack IT services company</strong>, offering:</p>
           <ul className="offerings">
             <li>Web & App Development</li>
@@ -40,7 +40,7 @@ const About: React.FC = () => {
         </section>
 
         <section className="why-choose">
-          <h2>Why Choose ITS?</h2>
+          <h2>Why Choose Aethrix Systems?</h2>
           <div className="why-grid">
             <article className="why-card">
               <h4>Local Expertise</h4>
@@ -125,7 +125,7 @@ const About: React.FC = () => {
 
         <section className="final-cta glass-card">
           <h2>Let’s Build the Future Together</h2>
-          <p className="muted">Whether you’re a startup, SMB, or enterprise, ITS has the expertise to take you further.</p>
+          <p className="muted">Whether you’re a startup, SMB, or enterprise, Aethrix Systems has the expertise to take you further.</p>
           <a className="cta-button primary" href="/contact">Get a Quote</a>
         </section>
       </main>

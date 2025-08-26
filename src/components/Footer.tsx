@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
@@ -9,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-main">
         <div className="footer-brand">
-          <span className="footer-logo-minimal">ITS</span>
+          <span className="footer-logo-minimal">Aethrix Systems</span>
         </div>
         <nav className="footer-nav-minimal">
           <Link to="/">Home</Link>
@@ -26,7 +25,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="footer-bottom-minimal">
-        <span>© {currentYear} ITS. All rights reserved.</span>
+        <span>© {currentYear} Aethrix Systems. All rights reserved.</span>
         <div className="footer-bottom-links">
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/terms-of-service">Terms</Link>

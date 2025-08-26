@@ -18,11 +18,21 @@ const Home: React.FC = () => {
             <p>Comprehensive IT solutions tailored to your business needs</p>
           </div>
           
-          <div className="grid services-grid">
+          <div className="services-grid">
             {[
-              { id: 'web-development', title: 'Web Development', desc: 'Custom websites and e-commerce solutions that help you establish a strong online presence and drive business growth.', link: '/services/web-development', icon: 'fas fa-globe' },
+              {
+                id: 'website-development',
+                title: 'Website Development',
+                desc: 'All-in-one website solutions: custom sites, WordPress, Shopify, Wix, e-commerce, and more — tailored for your business.',
+                link: '/services/web-development',
+                icon: 'fas fa-globe'
+              },
               { id: 'erp', title: 'ERP Solutions', desc: 'Streamline your business operations with integrated ERP systems that connect all aspects of your business.', link: '/services/erp', icon: 'fas fa-cogs' },
-              { id: 'cloud', title: 'Cloud & IT Services', desc: 'Secure, reliable cloud infrastructure and IT services that keep your business running smoothly.', link: '/services/cloud', icon: 'fas fa-cloud' }
+              { id: 'cloud', title: 'Cloud & IT Services', desc: 'Secure, reliable cloud infrastructure and IT services that keep your business running smoothly.', link: '/services/cloud', icon: 'fas fa-cloud' },
+              { id: 'networking', title: 'Networking', desc: 'Robust, secure networking for offices, remote teams, and hybrid work.', link: '/services/networking', icon: 'fas fa-network-wired' },
+              { id: 'data-migration', title: 'Data Migration & Recovery', desc: 'Safe, efficient data migration and disaster recovery solutions.', link: '/services/data-migration-recovery', icon: 'fas fa-database' },
+              { id: 'ai-automation', title: 'AI & Automation', desc: 'AI-powered automation, chatbots, and workflow optimization.', link: '/services/ai-automation', icon: 'fas fa-robot' },
+              { id: 'office365', title: 'Office365 & GSuite', desc: 'Cloud productivity, email, and collaboration setup and support.', link: '/services/office365-gsuite', icon: 'fas fa-envelope-open-text' }
             ].map((s) => (
               <div className="card" key={s.id}>
                 <div className="card-icon"><i className={s.icon}></i></div>

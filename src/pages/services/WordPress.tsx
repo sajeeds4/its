@@ -1,20 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import './Services.css';
 
+/**
+ * WordPress page component.
+ *
+ * Renders the main landing page for WordPress development services, including:
+ * - SEO meta tags for improved search visibility.
+ * - Hero section with a summary of offerings and primary calls to action.
+ * - Detailed overview of custom WordPress solutions for agencies and enterprises.
+ * - Feature grid highlighting key capabilities such as custom themes, plugins, WooCommerce, migrations, and headless architectures.
+ * - Sections describing performance, security, SEO practices, and enterprise readiness.
+ * - Pricing and package options for different business needs.
+ * - Outline of the typical project process from discovery to launch.
+ * - Final call-to-action for booking a free consultation.
+ *
+ * @returns {JSX.Element} The rendered WordPress services page.
+ */
 const WordPress: React.FC = () => {
   return (
     <main className="page-container" role="main">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>WordPress Development Services | Aethrix Systems</title>
+        <meta name="description" content="Aethrix Systems: Custom WordPress development for agencies and enterprises. Themes, WooCommerce, headless, migrations, multi-site & security. Book a free consultation." />
+      </Helmet>
       {/* Hero */}
       <header className="hero-section service-hero" aria-labelledby="wp-title">
         <div className="hero-content">
-          <h1 id="wp-title">WordPress Development Services</h1>
-          <p>
-            Custom WordPress development — from fast marketing sites to enterprise multi-site platforms. We build secure, SEO-optimized
-            WordPress solutions that convert visitors into customers.
-          </p>
+          <h1 id="wp-title">WordPress Development Services — Secure, Fast & Conversion-Focused</h1>
+          <p>Custom WordPress development — from fast marketing sites to enterprise multi-site platforms. We build secure, SEO-optimized WordPress solutions that convert visitors into customers.</p>
+          <div className="hero-actions">
+            <Link to="/free-consultation" className="cta-button primary">Book a free consultation</Link>
+            <Link to="#packages" className="cta-button secondary">View packages & pricing</Link>
+          </div>
         </div>
       </header>
+
+      {/* Intro / Lead */}
+      <section className="content-section">
+        <div className="container">
+          <article className="service-overview">
+            <h2>Custom WordPress Solutions for Agencies & Enterprises</h2>
+            <p>WordPress powers a large share of the web because it’s flexible, extendable, and easy for teams to manage. We deliver end-to-end WordPress solutions focused on measurable business outcomes: improved organic visibility, increased qualified traffic, and higher conversion rates. Whether you need a new WooCommerce store, a headless CMS for scale, or a custom plugin to support unique workflows — we design, build, secure, and operate WordPress sites that perform under real-world traffic.</p>
+          </article>
+        </div>
+      </section>
 
       <section className="content-section">
         <div className="container">
@@ -131,7 +163,7 @@ const WordPress: React.FC = () => {
           </section>
 
           {/* Pricing & Packages - keep concise */}
-          <section style={{ marginTop: '2rem' }}>
+          <section id="packages" style={{ marginTop: '2rem' }}>
             <h2>Packages & Typical Investment</h2>
             <p>
               Below are typical starting ranges — final estimates depend on scope, integrations, and custom requirements. We offer

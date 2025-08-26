@@ -1,286 +1,248 @@
 import React from 'react';
+import './CustomWebDevelopment.css';
+import { Building, ShoppingCart, Cloud, Lock, Book, Calendar } from 'lucide-react';
 
 const CustomWebDevelopment: React.FC = () => {
   return (
     <div className="page-container">
-      <div className="hero-section service-hero">
-        <div className="hero-content">
-          <h1>Custom Web Development</h1>
-          <p>Bespoke web applications built with modern technologies. React, Vue, Angular, and full-stack solutions tailored to your unique business needs.</p>
+      {/* Hero */}
+      <header className="hero-section service-hero hero-animated" aria-labelledby="custom-title">
+        <div className="hero-background" aria-hidden />
+        <div className="hero-content container">
+          <h1 id="custom-title">Custom Website Development</h1>
+          <p className="hero-sub">From idea to deployment — full-stack, scalable solutions built with the right technology</p>
+          <div className="hero-cta">
+            <a className="cta-button primary" href="/contact">Get Started</a>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="content-section">
+      <main className="content-section">
         <div className="container">
-          <div className="service-overview">
-            <h2>Enterprise-Grade Custom Web Solutions</h2>
-            <p>When off-the-shelf solutions don't meet your needs, our custom web development services deliver exactly what your business requires. We build scalable, secure, and high-performance web applications using cutting-edge technologies.</p>
-          </div>
-
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">⚛️</div>
-              <h3>React Development</h3>
-              <p>Modern React applications with hooks, context, and state management for dynamic user interfaces.</p>
+          {/* 2. Why Custom Development */}
+          <section id="why" className="why-section two-col">
+            <div className="col text-col">
+              <h2>Why Custom Development</h2>
+                <p className="max-text">Custom websites give you performance, flexibility and deep integration with your systems. They support unique business logic, stronger branding and better long-term ROI than templates. For example, for e‑commerce a custom checkout flow can reduce abandonment and increase average order value by letting us remove friction and tailor validation to your business rules.</p>
               <ul>
-                <li>Component-based architecture</li>
-                <li>Redux/Context state management</li>
-                <li>Server-side rendering (Next.js)</li>
-                <li>Progressive Web Apps (PWA)</li>
+                <li><strong>Performance:</strong> Tailored to your needs, optimized assets and infrastructure.</li>
+                <li><strong>Flexibility:</strong> Custom flows, integrations, and data models.</li>
+                <li><strong>Security & Scale:</strong> Enterprise patterns and tested deployments.</li>
+                <li><strong>SEO & Ownership:</strong> Full control of markup and hosting for SEO wins.</li>
               </ul>
             </div>
+            <div className="col art-col">
+              <div className="illustration glass-card">
+                <svg viewBox="0 0 400 260" className="illus-svg" aria-hidden>
+                  <circle cx="60" cy="60" r="36" fill="#6c63ff" opacity="0.12" />
+                  <rect x="140" y="40" width="200" height="140" rx="12" fill="#0f1724" opacity="0.04" />
+                  <g fill="#6c63ff">
+                    <rect x="160" y="60" width="40" height="8" rx="3" />
+                    <rect x="210" y="84" width="80" height="8" rx="3" />
+                    <rect x="160" y="108" width="120" height="8" rx="3" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </section>
 
-            <div className="feature-card">
-              <div className="feature-icon">🟢</div>
-              <h3>Vue.js Development</h3>
-              <p>Elegant Vue.js applications with Vuex state management and component-driven development.</p>
-              <ul>
-                <li>Vue 3 Composition API</li>
-                <li>Vuex state management</li>
-                <li>Nuxt.js for SSR</li>
-                <li>TypeScript integration</li>
-              </ul>
+          {/* 3. Types of Websites */}
+          <section id="types" className="types-section">
+            <h2>Types of Websites We Build</h2>
+
+            {/* flow diagram */}
+            <div className="flow-diagram">
+              <svg viewBox="0 0 800 80" preserveAspectRatio="xMidYMid meet" className="flow-svg" aria-hidden>
+                <g fill="none" stroke="#6c63ff" strokeWidth="2" strokeLinecap="round">
+                  <rect x="10" y="16" width="160" height="48" rx="8" fill="#fff" stroke="#cfc6ff" />
+                  <text x="90" y="46" textAnchor="middle" fill="#1f2937" fontSize="13">Business Needs</text>
+                  <path d="M190 40 H260" />
+                  <rect x="260" y="16" width="260" height="48" rx="8" fill="#fff" stroke="#cfc6ff" />
+                  <text x="390" y="46" textAnchor="middle" fill="#1f2937" fontSize="13">Custom Applications</text>
+                  <path d="M520 40 H590" />
+                  <rect x="590" y="16" width="200" height="48" rx="8" fill="#fff" stroke="#cfc6ff" />
+                  <text x="690" y="46" textAnchor="middle" fill="#1f2937" fontSize="13">Growth</text>
+                </g>
+              </svg>
             </div>
 
-            <div className="feature-card">
-              <div className="feature-icon">🅰️</div>
-              <h3>Angular Development</h3>
-              <p>Enterprise Angular applications with TypeScript, RxJS, and comprehensive testing suites.</p>
-              <ul>
-                <li>Angular 15+ features</li>
-                <li>TypeScript development</li>
-                <li>RxJS reactive programming</li>
-                <li>Angular Material design</li>
-              </ul>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">🔧</div>
-              <h3>Full-Stack Development</h3>
-              <p>Complete web applications with backend APIs, databases, and cloud infrastructure.</p>
-              <ul>
-                <li>Node.js/Express backends</li>
-                <li>Python/Django development</li>
-                <li>Database design & optimization</li>
-                <li>RESTful API development</li>
-              </ul>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">☁️</div>
-              <h3>Cloud-Native Applications</h3>
-              <p>Modern cloud applications built for scalability, reliability, and performance.</p>
-              <ul>
-                <li>Microservices architecture</li>
-                <li>Container deployment (Docker)</li>
-                <li>AWS/Azure/GCP integration</li>
-                <li>CI/CD pipelines</li>
-              </ul>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">📱</div>
-              <h3>Progressive Web Apps</h3>
-              <p>Web applications that work like native mobile apps with offline capabilities.</p>
-              <ul>
-                <li>Offline functionality</li>
-                <li>Push notifications</li>
-                <li>App-like experience</li>
-                <li>Cross-platform compatibility</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="technology-stack">
-            <h3>Our Technology Stack</h3>
-            <div className="tech-categories">
-              <div className="tech-category">
-                <h4>Frontend Technologies</h4>
-                <div className="tech-items">
-                  <div className="tech-item">React.js</div>
-                  <div className="tech-item">Vue.js</div>
-                  <div className="tech-item">Angular</div>
-                  <div className="tech-item">TypeScript</div>
-                  <div className="tech-item">Next.js</div>
-                  <div className="tech-item">Nuxt.js</div>
+            <div className="types-grid cards-grid">
+              {/* card: Business */}
+              <article className="type-card">
+                <div className="card-head">
+                  <Building className="card-icon" size={36} color="var(--accent)" />
+                  <h4>Business Websites</h4>
                 </div>
-              </div>
+                <p className="muted">Marketing sites, lead gen and conversion-focused experiences. Example: local firm site with 3x lead conversions after redesign.</p>
+              </article>
 
-              <div className="tech-category">
-                <h4>Backend Technologies</h4>
-                <div className="tech-items">
-                  <div className="tech-item">Node.js</div>
-                  <div className="tech-item">Python</div>
-                  <div className="tech-item">Django</div>
-                  <div className="tech-item">Express.js</div>
-                  <div className="tech-item">FastAPI</div>
-                  <div className="tech-item">GraphQL</div>
+              {/* card: E-commerce */}
+              <article className="type-card">
+                <div className="card-head">
+                  <ShoppingCart className="card-icon" size={36} color="var(--accent)" />
+                  <h4>E‑commerce Platforms</h4>
                 </div>
-              </div>
+                <p className="muted">Scalable stores with custom checkout and subscriptions. Example: subscription flow for a mid-market retailer.</p>
+              </article>
 
-              <div className="tech-category">
-                <h4>Databases</h4>
-                <div className="tech-items">
-                  <div className="tech-item">PostgreSQL</div>
-                  <div className="tech-item">MongoDB</div>
-                  <div className="tech-item">MySQL</div>
-                  <div className="tech-item">Redis</div>
-                  <div className="tech-item">Elasticsearch</div>
-                  <div className="tech-item">Firebase</div>
+              {/* card: SaaS */}
+              <article className="type-card">
+                <div className="card-head">
+                  <Cloud className="card-icon" size={36} color="var(--accent)" />
+                  <h4>SaaS Platforms</h4>
                 </div>
-              </div>
+                <p className="muted">Multi-tenant, secure SaaS with role-based features. Example: reporting SaaS with role-based billing.</p>
+              </article>
 
-              <div className="tech-category">
-                <h4>Cloud & DevOps</h4>
-                <div className="tech-items">
-                  <div className="tech-item">AWS</div>
-                  <div className="tech-item">Azure</div>
-                  <div className="tech-item">Google Cloud</div>
-                  <div className="tech-item">Docker</div>
-                  <div className="tech-item">Kubernetes</div>
-                  <div className="tech-item">Vercel</div>
+              {/* card: Portals */}
+              <article className="type-card">
+                <div className="card-head">
+                  <Lock className="card-icon" size={36} color="var(--accent)" />
+                  <h4>Portals</h4>
                 </div>
-              </div>
+                <p className="muted">Education, healthcare and finance portals with SSO and secure access. Example: patient portal with secure document delivery.</p>
+              </article>
+
+              {/* card: CMS */}
+              <article className="type-card">
+                <div className="card-head">
+                  <Book className="card-icon" size={36} color="var(--accent)" />
+                  <h4>CMS & Knowledge</h4>
+                </div>
+                <p className="muted">Headless or traditional CMS tailored to editorial workflows. Example: editorial CMS with structured content.</p>
+              </article>
+
+              {/* card: Booking */}
+              <article className="type-card">
+                <div className="card-head">
+                  <Calendar className="card-icon" size={36} color="var(--accent)" />
+                  <h4>Booking & Scheduling</h4>
+                </div>
+                <p className="muted">Appointment and resource systems. Example: scheduling system reducing no-shows with reminders.</p>
+              </article>
             </div>
-          </div>
+          </section>
 
-          <div className="development-process">
-            <h3>Our Development Process</h3>
-            <div className="process-steps">
-              <div className="process-step">
-                <div className="step-number">1</div>
-                <h4>Requirements Analysis</h4>
-                <p>Detailed analysis of your business requirements, user stories, and technical specifications.</p>
-              </div>
-              <div className="process-step">
-                <div className="step-number">2</div>
-                <h4>Architecture Design</h4>
-                <p>System architecture planning, technology selection, and database design.</p>
-              </div>
-              <div className="process-step">
-                <div className="step-number">3</div>
-                <h4>Agile Development</h4>
-                <p>Iterative development with regular demos and feedback incorporation.</p>
-              </div>
-              <div className="process-step">
-                <div className="step-number">4</div>
-                <h4>Testing & QA</h4>
-                <p>Comprehensive testing including unit tests, integration tests, and user acceptance testing.</p>
-              </div>
-              <div className="process-step">
-                <div className="step-number">5</div>
-                <h4>Deployment & Support</h4>
-                <p>Production deployment with monitoring, maintenance, and ongoing support.</p>
-              </div>
+          {/* 4. Technology Stack */}
+          <section id="tech" className="tech-section">
+            <h2>Technology Stack</h2>
+            <div className="tech-table-wrap">
+              <table className="tech-table">
+                <thead>
+                  <tr><th>Category</th><th>Tools</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Frontend</td><td>React, Next.js, Angular, Vue</td></tr>
+                  <tr><td>Backend</td><td>Node.js, Express, NestJS, Python (Django, FastAPI), PHP (Laravel)</td></tr>
+                  <tr><td>Databases</td><td>PostgreSQL, MySQL, MongoDB, Redis</td></tr>
+                  <tr><td>Cloud</td><td>AWS, Azure, GCP, Docker, Kubernetes</td></tr>
+                  <tr><td>AI / ML</td><td>TensorFlow, PyTorch, LangChain</td></tr>
+                </tbody>
+              </table>
             </div>
-          </div>
 
-          <div className="project-types">
-            <h3>Types of Custom Applications We Build</h3>
-            <div className="project-types-grid">
-              <div className="project-type">
-                <h4>Business Management Systems</h4>
-                <p>Custom CRM, ERP, and workflow management applications</p>
-              </div>
-              <div className="project-type">
-                <h4>E-commerce Platforms</h4>
-                <p>Custom online stores with advanced features and integrations</p>
-              </div>
-              <div className="project-type">
-                <h4>Data Analytics Dashboards</h4>
-                <p>Real-time dashboards and business intelligence applications</p>
-              </div>
-              <div className="project-type">
-                <h4>API Integration Platforms</h4>
-                <p>Systems that connect and synchronize multiple business applications</p>
-              </div>
-              <div className="project-type">
-                <h4>Content Management Systems</h4>
-                <p>Custom CMS solutions tailored to specific content workflows</p>
-              </div>
-              <div className="project-type">
-                <h4>Booking & Scheduling Systems</h4>
-                <p>Advanced appointment and resource management applications</p>
-              </div>
+            <div className="tech-logos-grid">
+              {['React','Next.js','Angular','Vue','Node','NestJS','Python','Django','Postgres','MongoDB','Redis','AWS','Docker','Kubernetes'].map((t)=> (
+                <div key={t} className="tech-logo">{t}</div>
+              ))}
             </div>
-          </div>
+          </section>
 
-          <div className="development-packages">
-            <h3>Custom Development Packages</h3>
-            <div className="pricing-grid">
-              <div className="pricing-card">
-                <h4>MVP Development</h4>
-                <div className="price">$15,000</div>
-                <ul>
-                  <li>Minimum viable product</li>
-                  <li>Core functionality</li>
-                  <li>Basic UI/UX design</li>
-                  <li>Database setup</li>
-                  <li>Testing & deployment</li>
-                  <li>3 months support</li>
-                </ul>
-                <a href="/contact" className="cta-button">Get Started</a>
-              </div>
-
-              <div className="pricing-card featured">
-                <h4>Full Application</h4>
-                <div className="price">$35,000</div>
-                <ul>
-                  <li>Complete feature set</li>
-                  <li>Advanced functionality</li>
-                  <li>Professional UI/UX</li>
-                  <li>Third-party integrations</li>
-                  <li>Performance optimization</li>
-                  <li>6 months support</li>
-                </ul>
-                <a href="/contact" className="cta-button">Most Popular</a>
-              </div>
-
-              <div className="pricing-card">
-                <h4>Enterprise Solution</h4>
-                <div className="price">$75,000+</div>
-                <ul>
-                  <li>Complex business logic</li>
-                  <li>Multiple integrations</li>
-                  <li>Scalable architecture</li>
-                  <li>Advanced security</li>
-                  <li>Performance monitoring</li>
-                  <li>12 months support</li>
-                </ul>
-                <a href="/contact" className="cta-button">Contact Us</a>
-              </div>
+          {/* 5. Comparison Table */}
+          <section id="compare" className="compare-section">
+            <h2>Custom vs Template</h2>
+            <div className="compare-wrap">
+              <table className="compare-table">
+                <thead>
+                  <tr><th>Feature</th><th>Custom Website</th><th>Template Website</th></tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Scalability','✓','✕'],
+                    ['Security','✓','✕'],
+                    ['SEO','✓','✕'],
+                    ['Integrations','✓','✕'],
+                    ['Performance','✓','✕'],
+                    ['Branding','✓','✕']
+                  ].map((r)=> (
+                    <tr key={r[0]}>
+                      <td>{r[0]}</td>
+                      <td className="center"><span className={r[1] === '✓' ? 'tick' : 'cross'} aria-hidden>{r[1]}</span></td>
+                      <td className="center"><span className={r[2] === '✓' ? 'tick' : 'cross'} aria-hidden>{r[2]}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          </div>
+          </section>
 
-          <div className="why-custom">
-            <h3>Why Choose Custom Development?</h3>
-            <div className="benefits-grid">
-              <div className="benefit-item">
-                <strong>Perfect Fit</strong>
-                <p>Built specifically for your business processes and requirements</p>
-              </div>
-              <div className="benefit-item">
-                <strong>Scalability</strong>
-                <p>Grows with your business without limitations of off-the-shelf solutions</p>
-              </div>
-              <div className="benefit-item">
-                <strong>Competitive Advantage</strong>
-                <p>Unique features that differentiate you from competitors</p>
-              </div>
-              <div className="benefit-item">
-                <strong>Full Control</strong>
-                <p>Complete ownership and control over your application and data</p>
-              </div>
+          {/* 6. Development Process (workflow) */}
+          <section id="process" className="workflow-section">
+            <h2>Development Process</h2>
+            <div className="workflow">
+              {[
+                ['Discovery','Workshops & requirements'],
+                ['UI/UX','Design & prototypes'],
+                ['Development','Iterative sprints'],
+                ['Testing','QA & performance'],
+                ['Deployment','CI/CD & infra'],
+                ['Support','Monitoring & updates']
+              ].map((s, i)=> (
+                <div key={s[0]} className="flow-block">
+                  <div className="flow-icon">{i+1}</div>
+                  <h4>{s[0]}</h4>
+                  <p>{s[1]}</p>
+                  {i < 5 && <div className="flow-arrow">→</div>}
+                </div>
+              ))}
             </div>
-          </div>
+          </section>
 
-          <div className="cta-section">
-            <h3>Ready to Build Your Custom Application?</h3>
-            <p>Let's discuss your unique requirements and create a custom web solution that drives your business forward.</p>
-            <a href="/contact" className="cta-button primary">Start Your Project</a>
-          </div>
+          {/* 7. Case Studies */}
+          <section id="case-studies" className="case-section">
+            <h2>Case Studies</h2>
+            <div className="case-grid">
+              <article className="case-card">
+                <h4>E‑commerce platform</h4>
+                <p className="muted">Problem: scaling spikes and checkout drops</p>
+                <p>Solution: moved to microservices, optimized checkout, added A/B testing.</p>
+                <div className="progress-compare">
+                  <div className="before">Before <div className="bar"><div className="fill" style={{width:'45%'}}/></div></div>
+                  <div className="after">After <div className="bar"><div className="fill" style={{width:'85%'}}/></div></div>
+                </div>
+                <p className="outcome">Outcome: +40% online sales</p>
+              </article>
+              <article className="case-card">
+                <h4>Analytics Dashboard</h4>
+                <p className="muted">Problem: slow batch reporting</p>
+                <p>Solution: real-time pipelines and optimized queries.</p>
+                <div className="progress-compare">
+                  <div className="before">Before <div className="bar"><div className="fill" style={{width:'50%'}}/></div></div>
+                  <div className="after">After <div className="bar"><div className="fill" style={{width:'80%'}}/></div></div>
+                </div>
+                <p className="outcome">Outcome: 30% faster decisions</p>
+              </article>
+              <article className="case-card">
+                <h4>Client Portal</h4>
+                <p className="muted">Problem: fragmented user experience</p>
+                <p>Solution: unified portal with SSO and role-based access.</p>
+                <div className="progress-compare">
+                  <div className="before">Before <div className="bar"><div className="fill" style={{width:'40%'}}/></div></div>
+                  <div className="after">After <div className="bar"><div className="fill" style={{width:'75%'}}/></div></div>
+                </div>
+                <p className="outcome">Outcome: improved retention</p>
+              </article>
+            </div>
+          </section>
+
+          {/* 8. Final CTA */}
+          <section id="final-cta" className="cta-final glass-card">
+            <h2>Ready to build your custom website?</h2>
+            <p>Tell us about your project and we'll prepare a tailored plan and budget.</p>
+            <a href="/contact" className="cta-button primary">Request a Free Consultation</a>
+          </section>
         </div>
-      </div>
+      </main>
     </div>
   );
 };

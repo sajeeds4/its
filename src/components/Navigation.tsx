@@ -109,7 +109,7 @@ const Navigation: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="nav-logo" tabIndex={0} aria-label="Home">
           <i className="fas fa-laptop-code logo-anim"></i>
-          <span>ITS</span>
+          <span>Aethrix Systems</span>
         </Link>
 
         {/* Desktop Navigation */}
