@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -28,8 +29,8 @@ const Hero: React.FC = () => {
                 Unlock scalable IT services — from web development to enterprise automation — and accelerate your digital growth.
               </p>
               <div className={styles.actions}>
-                <button className={styles.primary}>Get a Quote</button>
-                <button className={styles.secondary}>Talk to an Expert</button>
+                <Link to="/quick-quote" className={styles.primary}>Get a Quote</Link>
+                <Link to="/contact" className={styles.secondary}>Talk to an Expert</Link>
               </div>
             </div>
           </div>
@@ -44,8 +45,8 @@ const Hero: React.FC = () => {
                 Harness the power of cloud, AI, and DevOps to improve efficiency, reduce costs, and future-proof your business.
               </p>
               <div className={styles.actions}>
-                <button className={styles.primary}>Explore Cloud Services</button>
-                <button className={styles.secondary}>Learn More</button>
+                <Link to="/services/cloud" className={styles.primary}>Explore Cloud Services</Link>
+                <Link to="/services" className={styles.secondary}>Learn More</Link>
               </div>
             </div>
           </div>
@@ -60,8 +61,8 @@ const Hero: React.FC = () => {
                 Build resilient systems with cybersecurity, modern infrastructure, and continuous innovation tailored for your needs.
               </p>
               <div className={styles.actions}>
-                <button className={styles.primary}>Start Your Journey</button>
-                <button className={styles.secondary}>View Case Studies</button>
+                <Link to="/services/web-development" className={styles.primary}>Start Your Journey</Link>
+                <Link to="/case-studies" className={styles.secondary}>View Case Studies</Link>
               </div>
             </div>
           </div>
