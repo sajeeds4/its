@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,67 +10,73 @@ import Navigation from './components/Navigation';
 import NeuralBackground from './components/NeuralBackground';
 import Footer from './components/Footer';
 
-// Main pages
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Industries from './pages/Industries';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import CaseStudies from './pages/CaseStudies';
-import Resources from './pages/Resources';
-import IndustrySolutions from './pages/IndustrySolutions';
+// Main pages (lazy)
+const Home = lazy(() => import('./pages/Home'));
+const Services = lazy(() => import('./pages/Services'));
+const Industries = lazy(() => import('./pages/Industries'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const CaseStudies = lazy(() => import('./pages/CaseStudies'));
+const Resources = lazy(() => import('./pages/Resources'));
+const IndustrySolutions = lazy(() => import('./pages/IndustrySolutions'));
 
-// Legal pages
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import FreeConsultation from './pages/FreeConsultation';
-import ERPassessment from './pages/ERPassessment';
-import WebsiteAudit from './pages/WebsiteAudit';
-import QuickQuote from './pages/QuickQuote';
+// Legal pages (lazy)
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const FreeConsultation = lazy(() => import('./pages/FreeConsultation'));
+const ERPassessment = lazy(() => import('./pages/ERPassessment'));
+const WebsiteAudit = lazy(() => import('./pages/WebsiteAudit'));
+const QuickQuote = lazy(() => import('./pages/QuickQuote'));
 
-// Service pages
-import WebDevelopment from './pages/services/WebDevelopment';
-import WordPress from './pages/services/WordPress';
-import Shopify from './pages/services/Shopify';
-import Wix from './pages/services/Wix';
-import CustomWebDevelopment from './pages/services/CustomWebDevelopment';
-import ERPSolutions from './pages/services/ERPSolutions';
-import Office365GSuite from './pages/services/Office365GSuite';
-import AIAutomation from './pages/services/AIAutomation';
-import Cloud from './pages/services/Cloud';
-import Networking from './pages/services/Networking';
-import DataMigrationRecovery from './pages/services/DataMigrationRecovery';
+// Service pages (lazy)
+const WebDevelopment = lazy(() => import('./pages/services/WebDevelopment'));
+const WordPress = lazy(() => import('./pages/services/WordPress'));
+const Shopify = lazy(() => import('./pages/services/Shopify'));
+const Wix = lazy(() => import('./pages/services/Wix'));
+const CustomWebDevelopment = lazy(() => import('./pages/services/CustomWebDevelopment'));
+const ERPSolutions = lazy(() => import('./pages/services/ERPSolutions'));
+const Office365GSuite = lazy(() => import('./pages/services/Office365GSuite'));
+const AIAutomation = lazy(() => import('./pages/services/AIAutomation'));
+const Cloud = lazy(() => import('./pages/services/Cloud'));
+const Networking = lazy(() => import('./pages/services/Networking'));
+const DataMigrationRecovery = lazy(() => import('./pages/services/DataMigrationRecovery'));
 
-// ERP pages
-import Odoo from './pages/services/erp/Odoo';
-import NextERP from './pages/services/erp/NextERP';
-import RepairShppr from './pages/services/erp/RepairShppr';
-import LoadDepot from './pages/services/erp/LoadDepot';
+// ERP pages (lazy)
+const Odoo = lazy(() => import('./pages/services/erp/Odoo'));
+const NextERP = lazy(() => import('./pages/services/erp/NextERP'));
+const RepairShppr = lazy(() => import('./pages/services/erp/RepairShppr'));
+const LoadDepot = lazy(() => import('./pages/services/erp/LoadDepot'));
 
-// Industry pages
-import Retail from './pages/industries/Retail';
-import ProfessionalServices from './pages/industries/ProfessionalServices';
-import Healthcare from './pages/industries/Healthcare';
-import Manufacturing from './pages/industries/Manufacturing';
-import SmallBusiness from './pages/industries/SmallBusiness';
+// Industry pages (lazy)
+const Retail = lazy(() => import('./pages/industries/Retail'));
+const ProfessionalServices = lazy(() => import('./pages/industries/ProfessionalServices'));
+const Healthcare = lazy(() => import('./pages/industries/Healthcare'));
+const Manufacturing = lazy(() => import('./pages/industries/Manufacturing'));
+const SmallBusiness = lazy(() => import('./pages/industries/SmallBusiness'));
 
-// Case studies
-import OdooImplementation from './pages/case-studies/OdooImplementation';
-import ShopifyStore from './pages/case-studies/ShopifyStore';
-import WordPressRedesign from './pages/case-studies/WordPressRedesign';
-import CustomWebApp from './pages/case-studies/CustomWebApp';
-import AIAnalytics from './pages/case-studies/AIAnalytics';
+// Case studies (lazy)
+const OdooImplementation = lazy(() => import('./pages/case-studies/OdooImplementation'));
+const ShopifyStore = lazy(() => import('./pages/case-studies/ShopifyStore'));
+const WordPressRedesign = lazy(() => import('./pages/case-studies/WordPressRedesign'));
+const CustomWebApp = lazy(() => import('./pages/case-studies/CustomWebApp'));
+const AIAnalytics = lazy(() => import('./pages/case-studies/AIAnalytics'));
+import TopProgressBar from './components/TopProgressBar';
 
 function App() {
   return (
     <HelmetProvider>
       <Router>
         <div className="app min-vh-100 d-flex flex-column">
+          <a href="#main" className="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-outline-primary btn-sm" style={{ zIndex: 2001 }}>
+            Skip to content
+          </a>
+          <TopProgressBar />
           <NeuralBackground />
           <Navigation />
           {/* spacer to offset fixed navbar height (uses CSS var set by Navigation) */}
           <div aria-hidden="true" style={{ height: 'var(--nav-height, 80px)' }} />
-        <main className="main-content flex-grow-1">
+        <main id="main" className="main-content flex-grow-1">
+          <Suspense fallback={<div className="container py-4 text-muted">Loading…</div>}>
           <Routes>
             {/* Main Pages */}
             <Route path="/" element={<Home />} />
@@ -122,6 +129,7 @@ function App() {
             <Route path="/case-studies/custom-web-app" element={<CustomWebApp />} />
             <Route path="/case-studies/ai-analytics" element={<AIAnalytics />} />
           </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>

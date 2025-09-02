@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
   return (
     <section
       className="position-relative overflow-hidden hero-section"
-      style={{ minHeight: 'calc(78vh - var(--nav-height))' }}
+      style={{ minHeight: 'calc(68vh - var(--nav-height))' }}
     >
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
@@ -21,9 +21,9 @@ const Hero: React.FC = () => {
         slidesPerView={1}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        navigation={window.innerWidth > 768}
+    navigation={window.innerWidth > 768}
   className="w-100 h-100"
-  style={{ height: 'calc(78vh - var(--nav-height))' }}
+  style={{ height: 'calc(68vh - var(--nav-height))' }}
       >
         <SwiperSlide>
           <div className="position-relative w-100 h-100 d-flex align-items-center justify-content-center bg-3d-grid">

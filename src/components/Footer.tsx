@@ -39,12 +39,12 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-dark text-white footer-section">
       {/* Main Footer */}
-      <div className="container py-5">
-        <div className="row g-4">
+      <div className="container py-4">
+        <div className="row g-3">
           {/* Brand Section */}
           <div className="col-lg-4 col-md-6">
             <div className="d-flex align-items-center mb-4">
-              <AethrixLogo size="medium" variant="full" />
+              <AethrixLogo size="medium" variant="text" />
             </div>
             <p className="text-light fs-6 mb-4 pe-3">
               Aethrix Systems delivers modern IT services—Web, Cloud, ERP, AI, and Cybersecurity—engineered for growth and reliability.
@@ -167,7 +167,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="footer-bottom border-top border-secondary py-4">
+  <div className="footer-bottom border-top border-secondary py-3">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">

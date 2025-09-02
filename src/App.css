@@ -107,6 +107,8 @@ html {
   font-family: var(--font-sans);
   line-height: 1.6;
   scroll-behavior: smooth;
+  /* Fluid root font-size: 15px at 1024px up to ~18px at 1600px */
+  font-size: clamp(15px, 1.1vw + 8px, 18px);
 }
 
 body {
@@ -143,18 +145,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.2rem, 4.8vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
   font-weight: 700;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(1.3rem, 2.8vw, 1.85rem);
   font-weight: 600;
 }
 
@@ -393,13 +395,16 @@ html {
   z-index: 1;
 }
 
-/* Ensure sections account for fixed nav height */
-.hero-section,
-.service-hero,
-main,
-.main-content {
-  min-height: calc(100vh - var(--nav-height));
+/* Comfortable heights for key sections */
+.hero-section {
+  min-height: calc(70vh - var(--nav-height));
 }
+.service-hero {
+  min-height: calc(60vh - var(--nav-height));
+}
+/* Let main/content adapt to content height to avoid huge empty gaps */
+main,
+.main-content { min-height: auto; }
 
 /* Swiper container must fill available height and hide overflow correctly */
 .swiper,
@@ -413,9 +418,7 @@ h1, h2, h3, h4, h5, h6, section {
   scroll-margin-top: calc(var(--nav-height) + 8px);
 }
 
-.section {
-  padding: var(--spacing-12) 0;
-}
+.section { padding: var(--spacing-8) 0; }
 
 .section-gray {
   background-color: var(--light-dark);

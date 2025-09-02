@@ -1,4 +1,5 @@
 import React from 'react';
+import BeforeAfterSlider from '../../components/BeforeAfterSlider';
 
 const WordPressRedesign: React.FC = () => (
   <div className="page-container">
@@ -18,6 +19,14 @@ const WordPressRedesign: React.FC = () => (
           <li>+2.3x qualified leads</li>
           <li>Core Web Vitals passed</li>
         </ul>
+        <div className="my-4">
+          <BeforeAfterSlider
+            beforeSrc="/vite.svg"
+            afterSrc="/vite.svg"
+            altBefore="Before redesign"
+            altAfter="After redesign"
+          />
+        </div>
         <div className="cta-section">
           <a href="/contact" className="cta-button primary">Redesign Your Site</a>
         </div>

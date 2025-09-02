@@ -126,6 +126,63 @@ const Services: React.FC = () => {
             <Link to="/contact" className="btn btn-primary">Get Started →</Link>
           </div>
 
+          {/* Comparison Table */}
+          <div className="section" style={{ marginTop: '2rem' }}>
+            <div className="section-header text-center">
+              <h2>Service Tiers at a Glance</h2>
+              <p className="text-muted">Clear deliverables across engagement levels.</p>
+            </div>
+            <div className="table-responsive">
+              <table className="table align-middle text-nowrap">
+                <thead>
+                  <tr>
+                    <th scope="col">Capability</th>
+                    <th scope="col">Essential</th>
+                    <th scope="col">Professional</th>
+                    <th scope="col">Enterprise</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Project Management</td>
+                    <td>Lightweight</td>
+                    <td>PM + Weekly Sync</td>
+                    <td>Dedicated PM + Reporting</td>
+                  </tr>
+                  <tr>
+                    <td>Support</td>
+                    <td>Business Hours</td>
+                    <td>Priority</td>
+                    <td>24×7</td>
+                  </tr>
+                  <tr>
+                    <td>QA & UAT</td>
+                    <td>Basic</td>
+                    <td>Structured</td>
+                    <td>Automated + UAT</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Process Timeline */}
+          <div className="section" style={{ marginTop: '1rem' }}>
+            <div className="section-header text-center">
+              <h2>How We Work</h2>
+            </div>
+            <div className="row g-3 justify-content-center">
+              {["Discover","Design","Build","Launch","Support"].map((step, i) => (
+                <div key={step} className="col-6 col-md-2">
+                  <div className="card text-center p-3 h-100">
+                    <div className="rounded-circle mx-auto mb-2" style={{ width: 36, height: 36, background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(0,0,0,0.06)' }} />
+                    <div className="fw-semibold">{i+1}. {step}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Explore All Services - quick links to all sub-services */}
           <div className="section" style={{ marginTop: '3rem' }}>
             <div className="section-header text-center">
