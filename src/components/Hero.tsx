@@ -26,9 +26,9 @@ const Hero: React.FC = () => {
         style={{ height: 'calc(100vh - var(--nav-height))' }}
       >
         <SwiperSlide>
-          <div className="position-relative w-100 h-100 d-flex align-items-center justify-content-center hero-gradient-primary">
+          <div className="position-relative w-100 h-100 d-flex align-items-center justify-content-center bg-3d-grid">
             <AnimatedBackground />
-            <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-20" />
+            {/* Removed dark overlay; background is now subtle grid */}
             
             {/* Background Pattern */}
             <div className="position-absolute top-0 start-0 w-100 h-100 hero-pattern">
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
               </FloatingElement>
             </div>
 
-            <div className="hero-content position-relative z-2 text-center text-white px-3">
+            <div className="hero-content position-relative z-2 text-center px-3">
               <h1 className="hero-title display-1 fw-bold mb-4 animate-slide-up">
                 <Typewriter 
                   text="Transform Your Business with Smarter IT Solutions"
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
                 </Link>
                 <Link 
                   to="/contact" 
-                  className="btn btn-outline-light btn-lg px-4 py-3 hero-btn-secondary"
+                  className="btn btn-outline-secondary btn-lg px-4 py-3 hero-btn-secondary"
                 >
                   <span className="d-none d-sm-inline">Talk to an Expert</span>
                   <span className="d-sm-none">Contact</span>
@@ -91,8 +91,8 @@ const Hero: React.FC = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="position-relative w-100 h-100 d-flex align-items-center justify-content-center hero-gradient-blue">
-            <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-20" />
+          <div className="position-relative w-100 h-100 d-flex align-items-center justify-content-center bg-3d-grid">
+            {/* Removed dark overlay; background is now subtle grid */}
             
             {/* Background Pattern */}
             <div className="position-absolute top-0 start-0 w-100 h-100 hero-pattern">
@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
               <div className="hero-square-3"></div>
             </div>
 
-            <div className="hero-content position-relative z-2 text-center text-white px-3">
+            <div className="hero-content position-relative z-2 text-center px-3">
               <h1 className="hero-title display-1 fw-bold mb-4 animate-slide-up">
                 Scale Faster with{' '}
                 <span className="text-gradient hero-highlight-blue">
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
                 </Link>
                 <Link 
                   to="/services" 
-                  className="btn btn-outline-light btn-lg px-4 py-3 hero-btn-secondary"
+                  className="btn btn-outline-secondary btn-lg px-4 py-3 hero-btn-secondary"
                 >
                   <span className="d-none d-sm-inline">Learn More</span>
                   <span className="d-sm-none">Services</span>
@@ -132,8 +132,8 @@ const Hero: React.FC = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="position-relative w-100 h-100 d-flex align-items-center justify-content-center hero-gradient-green">
-            <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-20" />
+          <div className="position-relative w-100 h-100 d-flex align-items-center justify-content-center bg-3d-grid">
+            {/* Removed dark overlay; background is now subtle grid */}
             
             {/* Background Pattern */}
             <div className="position-absolute top-0 start-0 w-100 h-100 hero-pattern">
@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
               <div className="hero-circle-7"></div>
             </div>
 
-            <div className="hero-content position-relative z-2 text-center text-white px-3">
+            <div className="hero-content position-relative z-2 text-center px-3">
               <h1 className="hero-title display-1 fw-bold mb-4 animate-slide-up">
                 Streamline Operations with{' '}
                 <span className="text-gradient hero-highlight-green">
@@ -162,7 +162,7 @@ const Hero: React.FC = () => {
                 </Link>
                 <Link 
                   to="/industries" 
-                  className="btn btn-outline-light btn-lg px-4 py-3 hero-btn-secondary"
+                  className="btn btn-outline-secondary btn-lg px-4 py-3 hero-btn-secondary"
                 >
                   <span className="d-none d-sm-inline">View Industries</span>
                   <span className="d-sm-none">Industries</span>

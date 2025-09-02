@@ -5,7 +5,7 @@
 .about-hero .lead{font-size:1.05rem;color:#374151;margin-bottom:0.6rem}
 
 .about-main{padding-bottom:3rem}
-.story p{color:#334155;line-height:1.6}
+.story p{color:var(--text-light);line-height:1.6}
 .offerings{margin:0.6rem 0 1rem 1rem}
 .offerings li{margin:0.4rem 0}
 

@@ -114,7 +114,7 @@ input, select, textarea {
 }
 
 .contact-details p {
-  color: #64748b;
+  color: var(--text-light);
   margin: 0;
 }
 

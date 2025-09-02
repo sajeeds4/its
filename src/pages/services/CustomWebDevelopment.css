@@ -14,7 +14,7 @@
 main.content-section > .container > section{padding:2rem 0}
 
 /* typography and readability */
-.max-text{max-width:62ch;line-height:1.6;color:#334155}
+.max-text{max-width:62ch;line-height:1.6;color:var(--text-light)}
 h2{margin-bottom:0.6rem}
 h4{margin-top:0.6rem}
 
@@ -57,7 +57,7 @@ h4{margin-top:0.6rem}
 
 /* Two-column why section */
 .why-section.two-col{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center;margin:2.5rem 0}
-.why-section .text-col p{color:#334155}
+.why-section .text-col p{color:var(--text-light)}
 .why-section .art-col .illustration{height:220px;display:flex;align-items:center;justify-content:center}
 
 /* Types grid / cards */
@@ -115,7 +115,7 @@ h4{margin-top:0.6rem}
 /* Case studies */
 .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
 .case-card{padding:1rem;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
-.muted{color:#64748b}
+.muted{color:var(--text-muted)}
 .outcome{font-weight:700;color:var(--primary-dark)}
 
 /* Final CTA */

@@ -116,6 +116,10 @@
   --z-30: 30;
   --z-40: 40;
   --z-50: 50;
+
+  /* 3D grid tokens */
+  --grid-line: rgba(15, 23, 42, 0.06); /* light theme subtle lines */
+  --grid-glow: rgba(59, 130, 246, 0.10); /* subtle cyan/blue glow */
 }
 
 /* Dark mode support (explicit data-theme and system default) */
@@ -142,6 +146,10 @@
     --grad-hero-2-end: var(--brand-blue);
     --grad-hero-3-start: #047857;
     --grad-hero-3-end: var(--brand-green);
+
+  /* grid tokens for dark */
+  --grid-line: rgba(255, 255, 255, 0.08);
+  --grid-glow: rgba(59, 130, 246, 0.16);
   }
 }
 
@@ -167,6 +175,10 @@
   --grad-hero-2-end: var(--brand-blue);
   --grad-hero-3-start: #047857;
   --grad-hero-3-end: var(--brand-green);
+
+  /* grid tokens for dark */
+  --grid-line: rgba(255, 255, 255, 0.08);
+  --grid-glow: rgba(59, 130, 246, 0.16);
 }
 
 /* Smooth theme transitions */

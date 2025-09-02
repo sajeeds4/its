@@ -630,35 +630,9 @@ h1, h2, h3, h4, h5, h6, section {
 }
 
 /* Hero Section with Gradient Overlay */
-.hero-overlay {
-  position: relative;
-  color: white;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.hero-overlay::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.9) 0%, rgba(16, 185, 129, 0.8) 100%);
-  z-index: -1;
-}
-
-.hero-overlay::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-  opacity: 0.3;
-  z-index: -1;
-}
+.hero-overlay { position: relative; color: var(--text); overflow: hidden; z-index: 1; }
+.hero-overlay::before { content: ''; position: absolute; inset: 0; z-index: -1; background: none; }
+.hero-overlay::after { content: ''; position: absolute; inset: 0; z-index: -1; background: none; }
 
 /* Animation Effects */
 @keyframes float {
