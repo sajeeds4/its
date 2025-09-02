@@ -262,9 +262,25 @@
   margin: 4rem 0;
   text-align: center;
   border: 1px solid #cbd5e1;
+  position: relative;
+  overflow: hidden;
 }
 .case-study-highlight.premium-border { position: relative; }
 .case-study-highlight.premium-border::before { content:""; position:absolute; inset:-1px; border-radius:13px; background: linear-gradient(135deg,#06b6d4,#3b82f6); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; padding:1px; pointer-events:none; }
+
+/* Subtle 3D grid on highlight */
+.case-study-highlight::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(700px 350px at 85% 20%, rgba(var(--brand-blue-rgb),0.08), transparent 60%),
+    radial-gradient(700px 350px at 15% 80%, rgba(var(--brand-cyan-rgb),0.08), transparent 60%),
+    linear-gradient(to right, transparent 0%, transparent calc(100% - 1px), var(--grid-line) calc(100% - 1px)),
+    linear-gradient(to bottom, transparent 0%, transparent calc(100% - 1px), var(--grid-line) calc(100% - 1px));
+  background-size: 100% 100%, 100% 100%, 90px 90px, 90px 90px;
+  mix-blend-mode: normal;
+  border-radius: 12px;
+}
 
 .case-study-highlight h3 {
   color: var(--text);
@@ -357,6 +373,19 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  position: relative;
+  overflow: visible;
+}
+
+/* Subtle 3D grid behind pricing packages */
+.packages-grid::before {
+  content: "";
+  position: absolute; inset: -2rem 0 -2rem 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(800px 400px at 50% 0%, var(--grid-glow), transparent 60%),
+    linear-gradient(to right, transparent 0%, transparent calc(100% - 1px), var(--grid-line) calc(100% - 1px)),
+    linear-gradient(to bottom, transparent 0%, transparent calc(100% - 1px), var(--grid-line) calc(100% - 1px));
+  background-size: 100% 100%, 100px 100px, 100px 100px;
 }
 
 .package {

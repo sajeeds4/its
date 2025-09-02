@@ -6,14 +6,14 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Hero.css';
-import { Typewriter, NetworkVisualization, FloatingElement } from './ITAnimations';
+import { NetworkVisualization, FloatingElement } from './ITAnimations';
 import AnimatedBackground from './AnimatedBackground';
 
 const Hero: React.FC = () => {
   return (
     <section
       className="position-relative overflow-hidden hero-section"
-      style={{ minHeight: 'calc(100vh - var(--nav-height))' }}
+      style={{ minHeight: 'calc(78vh - var(--nav-height))' }}
     >
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
@@ -22,8 +22,8 @@ const Hero: React.FC = () => {
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation={window.innerWidth > 768}
-        className="w-100 h-100"
-        style={{ height: 'calc(100vh - var(--nav-height))' }}
+  className="w-100 h-100"
+  style={{ height: 'calc(78vh - var(--nav-height))' }}
       >
         <SwiperSlide>
           <div className="position-relative w-100 h-100 d-flex align-items-center justify-content-center bg-3d-grid">
@@ -47,18 +47,13 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="hero-content position-relative z-2 text-center px-3">
-              <h1 className="hero-title display-1 fw-bold mb-4 animate-slide-up">
-                <Typewriter 
-                  text="Transform Your Business with Smarter IT Solutions"
-                  speed={80}
-                  delay={500}
-                  className="text-gradient hero-highlight"
-                />
+              <h1 className="hero-title display-1 fw-bold mb-3">
+                Transform Your Business with Smarter IT Solutions
               </h1>
-              <p className="hero-subtitle lead fs-5 mb-5 animate-slide-up mx-auto" style={{ maxWidth: '600px', animationDelay: '0.2s' }}>
+              <p className="hero-subtitle lead fs-5 mb-4 mx-auto" style={{ maxWidth: '600px' }}>
                 Unlock scalable IT services — from web development to enterprise automation — and accelerate your digital growth.
               </p>
-              <div className="hero-actions d-flex flex-column flex-sm-row gap-3 justify-content-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="hero-actions d-flex flex-column flex-sm-row gap-3 justify-content-center">
                 <Link 
                   to="/quick-quote" 
                   className="btn btn-primary btn-lg px-4 py-3 shadow hero-btn-primary"
@@ -102,16 +97,16 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="hero-content position-relative z-2 text-center px-3">
-              <h1 className="hero-title display-1 fw-bold mb-4 animate-slide-up">
+              <h1 className="hero-title display-1 fw-bold mb-3">
                 Scale Faster with{' '}
                 <span className="text-gradient hero-highlight-blue">
                   Cloud & Automation
                 </span>
               </h1>
-              <p className="hero-subtitle lead fs-5 mb-5 animate-slide-up mx-auto" style={{ maxWidth: '600px', animationDelay: '0.2s' }}>
+              <p className="hero-subtitle lead fs-5 mb-4 mx-auto" style={{ maxWidth: '600px' }}>
                 Harness the power of cloud, AI, and DevOps to improve efficiency, reduce costs, and future-proof your business.
               </p>
-              <div className="hero-actions d-flex flex-column flex-sm-row gap-3 justify-content-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="hero-actions d-flex flex-column flex-sm-row gap-3 justify-content-center">
                 <Link 
                   to="/services/cloud" 
                   className="btn btn-primary btn-lg px-4 py-3 shadow hero-btn-primary"
@@ -143,16 +138,16 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="hero-content position-relative z-2 text-center px-3">
-              <h1 className="hero-title display-1 fw-bold mb-4 animate-slide-up">
+              <h1 className="hero-title display-1 fw-bold mb-3">
                 Streamline Operations with{' '}
                 <span className="text-gradient hero-highlight-green">
                   ERP Solutions
                 </span>
               </h1>
-              <p className="hero-subtitle lead fs-5 mb-5 animate-slide-up mx-auto" style={{ maxWidth: '600px', animationDelay: '0.2s' }}>
+              <p className="hero-subtitle lead fs-5 mb-4 mx-auto" style={{ maxWidth: '600px' }}>
                 Integrate your workflows with our industry-specific ERP solutions and watch your efficiency soar.
               </p>
-              <div className="hero-actions d-flex flex-column flex-sm-row gap-3 justify-content-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="hero-actions d-flex flex-column flex-sm-row gap-3 justify-content-center">
                 <Link 
                   to="/services/erp-solutions" 
                   className="btn btn-primary btn-lg px-4 py-3 shadow hero-btn-primary"
