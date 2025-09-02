@@ -1,13 +1,20 @@
 import React from 'react';
+import './industries/Industries.css';
 
 const Industries: React.FC = () => {
   return (
     <div className="industries-page">
+      <section className="industry-hero">
+        <div className="hero-content">
+          <h1>Industries We Serve</h1>
+          <p>Specialized technology solutions tailored to meet the unique challenges of different business sectors</p>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container">
           <div className="section-header text-center">
-            <h1>Industries We Serve</h1>
-            <p>Specialized technology solutions tailored to meet the unique challenges of different business sectors</p>
+            <h2>Industry Focus</h2>
           </div>
           
           <div className="grid grid-2">

@@ -4,12 +4,51 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Transform your business with our comprehensive IT solutions including web development, ERP systems, cloud solutions, and AI automation services." />
-    <title>ITS - Innovative Technology Solutions | Long Island IT Services</title>
+    <meta name="description" content="Aethrix Systems delivers cutting-edge IT solutions, web development, ERP systems, cloud infrastructure, AI automation, and enterprise technology services. Transform your business with our expert team." />
+    <meta name="keywords" content="Aethrix Systems, IT services, web development, ERP solutions, cloud computing, AI automation, digital transformation, enterprise technology, cybersecurity, data migration, network infrastructure, Long Island IT, New York technology services" />
+    <meta property="og:title" content="Aethrix Systems | Advanced IT Solutions & Digital Transformation" />
+    <meta property="og:description" content="Leading IT solutions provider specializing in web development, ERP systems, cloud infrastructure, AI automation, and enterprise technology services. Expert digital transformation for modern businesses." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Aethrix Systems" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aethrix Systems | Advanced IT Solutions" />
+    <meta name="twitter:description" content="Transform your business with cutting-edge IT solutions from Aethrix Systems. Web development, ERP, cloud, AI automation & more." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Aethrix Systems" />
+    <meta name="geo.region" content="US-NY" />
+    <meta name="geo.placename" content="Long Island, New York" />
+    <meta name="language" content="English" />
+    <link rel="canonical" href="https://aethrixsystems.com" />
+    <title>Aethrix Systems | Advanced IT Solutions & Digital Transformation Services</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <script>
+      (function() {
+        const root = document.documentElement;
+        const mql = window.matchMedia('(prefers-color-scheme: dark)');
+        const pref = localStorage.getItem('theme'); // 'light' | 'dark' | 'system' | null
+        const setTheme = (mode) => {
+          if (mode === 'light' || mode === 'dark') {
+            root.setAttribute('data-theme', mode);
+            root.style.colorScheme = mode;
+          } else {
+            // System
+            root.removeAttribute('data-theme');
+            const dark = mql.matches;
+            root.style.colorScheme = dark ? 'dark' : 'light';
+          }
+        };
+        setTheme(pref || 'system');
+        const onChange = () => {
+          const p = localStorage.getItem('theme');
+          if (!p || p === 'system') setTheme('system');
+        };
+        if (mql.addEventListener) mql.addEventListener('change', onChange);
+        else mql.addListener(onChange);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

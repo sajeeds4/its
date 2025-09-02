@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import './services/Services.css';
 
@@ -63,7 +64,33 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="services-page">
+    <>
+      <Helmet>
+        <title>IT Services & Solutions - Web Development, ERP, Cloud & AI | Aethrix Systems</title>
+        <meta 
+          name="description" 
+          content="Professional IT services including custom web development, ERP solutions (Odoo, NextERP), cloud migration, AI automation, and managed IT support. Serving Long Island businesses with enterprise-grade technology."
+        />
+        <meta 
+          name="keywords" 
+          content="IT services Long Island, web development, ERP solutions, Odoo implementation, cloud services, AI automation, custom software development, managed IT support, business technology solutions"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://aethrixsystems.com/services" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Professional IT Services & Solutions | Aethrix Systems" />
+        <meta property="og:description" content="Transform your business with our comprehensive IT services: custom development, ERP solutions, cloud migration, AI automation, and expert support." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://aethrixsystems.com/services" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="IT Services & Solutions | Aethrix Systems" />
+        <meta name="twitter:description" content="Enterprise-grade IT solutions for small and medium businesses: web development, ERP, cloud, AI, and managed support." />
+      </Helmet>
+      
+      <div className="services-page">
       {/* Hero / Intro */}
       <section className="section">
         <div className="container">
@@ -145,6 +172,7 @@ const Services: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

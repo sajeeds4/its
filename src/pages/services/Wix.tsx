@@ -16,7 +16,7 @@ const Wix: React.FC = () => {
       <main className="container wix-main">
         <section className="intro">
           <h2>Expert Wix Solutions</h2>
-          <p className="muted">Wix powers over 200 million websites worldwide with its intuitive drag-and-drop platform. At ITS, our certified Wix experts go beyond templates—we create stunning, professional websites that balance ease of use with enterprise-level functionality to help your business succeed online.</p>
+          <p className="muted">Wix powers over 200 million websites worldwide with its intuitive drag-and-drop platform. At Aethrix Systems, our certified Wix experts go beyond templates—we create stunning, professional websites that balance ease of use with enterprise-level functionality to help your business succeed online.</p>
         </section>
 
         <section className="offerings">

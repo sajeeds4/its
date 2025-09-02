@@ -60,7 +60,7 @@
 }
 
 .content-section {
-  padding: 40px 0;
+  padding: clamp(2rem, 3vw + 1rem, 4rem) 0;
 }
 
 .service-overview {
@@ -89,8 +89,8 @@
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(2rem, 4vw, 4rem);
 }
 
 .feature-card {
@@ -196,14 +196,14 @@
 /* Services grid used on the main Services overview page */
 .services-grid {
   display: grid;
-  gap: 1rem;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
   /* mobile first: 1 column */
   grid-template-columns: 1fr;
 }
 
 /* Slightly smaller card style when used in services grid */
 .services-grid .card {
-  padding: 1rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   border-radius: 12px;
 }
 

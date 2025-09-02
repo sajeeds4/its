@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css';
 
 // Main layout components
@@ -14,8 +17,9 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import CaseStudies from './pages/CaseStudies';
 import Resources from './pages/Resources';
-import Blog from './pages/Blog';
-import Careers from './pages/Careers';
+import IndustrySolutions from './pages/IndustrySolutions';
+
+// Legal pages
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import FreeConsultation from './pages/FreeConsultation';
@@ -58,24 +62,26 @@ import AIAnalytics from './pages/case-studies/AIAnalytics';
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <NeuralBackground />
-        <Navigation />
-  {/* spacer to offset fixed navbar height (uses CSS var set by Navigation) */}
-  <div aria-hidden="true" style={{ height: 'var(--nav-height)' }} />
-  <main className="main-content">
+    <HelmetProvider>
+      <Router>
+        <div className="app min-vh-100 d-flex flex-column">
+          <NeuralBackground />
+          <Navigation />
+          {/* spacer to offset fixed navbar height (uses CSS var set by Navigation) */}
+          <div aria-hidden="true" style={{ height: 'var(--nav-height, 80px)' }} />
+        <main className="main-content flex-grow-1">
           <Routes>
             {/* Main Pages */}
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/industries" element={<Industries />} />
+            <Route path="/industry-solutions" element={<IndustrySolutions />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/resources" element={<Resources />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/careers" element={<Careers />} />
+
+            {/* Legal Pages */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/free-consultation" element={<FreeConsultation />} />
@@ -120,6 +126,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+  </HelmetProvider>
   );
 }
 

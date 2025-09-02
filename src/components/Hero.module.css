@@ -2,7 +2,7 @@
 .hero {
   width: 100%;
   /* use 50-60% of viewport height (we'll center card vertically within this area) */
-  min-height: 56vh;
+  min-height: 48vh; /* more compact hero height for better balance */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,19 +13,21 @@
 .container {
   width: 100%;
   max-width: 1200px;
-  padding: 2rem;
+  padding: var(--spacing-6);
   box-sizing: border-box;
 }
 
 .card {
   background: #ffffff;
-  border-radius: 1.5rem;
-  padding: 2rem;
-  box-shadow: 0 18px 50px rgba(17,24,39,0.08);
+  border-radius: 1rem;
+  padding: var(--spacing-6);
+  box-shadow: 0 10px 30px rgba(17,24,39,0.06);
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 1.5rem;
+  grid-template-columns: 1fr auto; /* let visual scale naturally */
+  gap: var(--spacing-5);
   align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
 }
 
 .left {
@@ -34,32 +36,33 @@
 
 .headline {
   color: #111827;
-  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
   font-weight: 800;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 var(--spacing-3) 0;
 }
 
 .subtext {
   color: #4B5563;
   font-size: 1.05rem;
-  margin: 0 0 1rem 0;
-  line-height: 1.5;
+  margin: 0 0 var(--spacing-4) 0;
+  line-height: 1.6;
 }
 
 .actions {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-3);
 }
 
 .cta {
   background: linear-gradient(90deg, #2563eb, #7c3aed);
   color: #fff;
   border: none;
-  padding: 0.75rem 1.25rem;
+  padding: 0.65rem 1.1rem;
   border-radius: 999px;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 8px 22px rgba(37,99,235,0.12);
 }
 
 .ctaSecondary {
@@ -69,6 +72,7 @@
   padding: 0.6rem 1rem;
   border-radius: 999px;
   cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 
@@ -102,7 +106,7 @@
 
 .illustration {
   max-width: 100%;
-  width: 320px;
+  width: min(40vw, 280px);
   height: auto;
   display: block;
 }
@@ -121,7 +125,8 @@
 /* Swiper & slide styles */
 .swiper {
   width: 100%;
-  height: 80vh;
+  /* reduce slider height so following sections appear sooner on desktop */
+  height: 60vh;
 }
 
 .slide {
@@ -169,18 +174,22 @@
 @media (max-width: 900px) {
   .card {
     grid-template-columns: 1fr;
-    padding: 1.25rem;
+    padding: var(--spacing-4);
+    gap: var(--spacing-4);
   }
   .features {
     margin-top: 0.5rem;
   }
   .container {
-    padding: 1rem;
+    padding: var(--spacing-4);
   }
+  .headline { text-align: center; }
+  .subtext { text-align: center; }
 }
 
 @media (max-width: 420px) {
   .headline { font-size: 1.25rem; }
   .desc { font-size: 0.95rem; }
-  .card { padding: 1rem; border-radius: 1rem; }
+  .card { padding: var(--spacing-3); border-radius: 1rem; }
+  .illustration { width: 180px; }
 }

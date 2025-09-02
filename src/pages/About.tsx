@@ -1,10 +1,37 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 import { MapPin, Zap, Shield, TrendingUp } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <div className="about-page page-container">
+    <>
+      <Helmet>
+        <title>About Aethrix Systems - Leading IT Solutions Provider on Long Island</title>
+        <meta 
+          name="description" 
+          content="Learn about Aethrix Systems, Long Island's premier IT solutions provider. We specialize in web development, ERP solutions, cloud services, AI automation, and digital transformation for businesses of all sizes."
+        />
+        <meta 
+          name="keywords" 
+          content="about aethrix systems, long island IT company, IT solutions provider, technology consulting, digital transformation, enterprise software, business automation, custom development, cloud services"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://aethrixsystems.com/about" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="About Aethrix Systems - Leading IT Solutions Provider" />
+        <meta property="og:description" content="Discover how Aethrix Systems transforms businesses through innovative technology solutions, from custom web development to AI automation." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://aethrixsystems.com/about" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Aethrix Systems - IT Solutions Provider" />
+        <meta name="twitter:description" content="Learn about our mission to transform businesses through cutting-edge technology solutions and enterprise-level IT services." />
+      </Helmet>
+      
+      <div className="about-page page-container">
       <header className="about-hero glass-card">
         <div className="container">
           <h1>About Aethrix Systems</h1>
@@ -130,6 +157,7 @@ const About: React.FC = () => {
         </section>
       </main>
     </div>
+  </>
   );
 };
 

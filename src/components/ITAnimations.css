@@ -1,0 +1,361 @@
+/* IT Animations and Effects */
+
+/* Typewriter Animation */
+.typewriter {
+  font-family: 'Courier New', monospace;
+  position: relative;
+}
+
+.typewriter-cursor {
+  color: #6366f1;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Animated Code Block */
+.animated-code-block {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.animated-code-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(90deg, #1a1a2e, #16213e, #1a1a2e);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.code-line-animated {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: codeAppear 0.8s ease-out forwards;
+}
+
+.line-number {
+  color: #6366f1;
+  margin-right: 15px;
+  font-size: 0.9em;
+  min-width: 25px;
+}
+
+.code-content {
+  color: #e2e8f0;
+  font-size: 0.9em;
+}
+
+@keyframes codeAppear {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Floating Elements */
+.floating-element {
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.floating-up {
+  animation-name: floatUp;
+}
+
+.floating-down {
+  animation-name: floatDown;
+}
+
+.floating-left {
+  animation-name: floatLeft;
+}
+
+.floating-right {
+  animation-name: floatRight;
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+}
+
+@keyframes floatLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-20px); }
+}
+
+@keyframes floatRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+/* Data Stream Animation */
+.data-stream {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.data-bit {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  border-radius: 50%;
+  animation: dataPulse 2s infinite ease-in-out;
+}
+
+@keyframes dataPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+    background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+    background: linear-gradient(45deg, #8b5cf6, #ec4899);
+  }
+}
+
+/* Network Visualization */
+.network-visualization {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.network-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.center-node {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 50%;
+  position: relative;
+  animation: centerPulse 3s infinite ease-in-out;
+}
+
+.center-node::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  border-radius: 50%;
+  animation: centerRing 3s infinite ease-in-out;
+}
+
+.network-node-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  animation: nodeOrbit 8s linear infinite;
+}
+
+.network-node {
+  width: 12px;
+  height: 12px;
+  background: #8b5cf6;
+  border-radius: 50%;
+  position: relative;
+  animation: nodePulse 2s infinite ease-in-out;
+}
+
+.network-connection {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.5), transparent);
+  transform: translateX(-50%);
+  animation: connectionFlow 2s infinite ease-in-out;
+}
+
+@keyframes centerPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes centerRing {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.3;
+  }
+}
+
+@keyframes nodeOrbit {
+  0% { transform: rotate(0deg) translateY(-80px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateY(-80px) rotate(-360deg); }
+}
+
+@keyframes nodePulse {
+  0%, 100% { 
+    transform: scale(1);
+    background: #8b5cf6;
+  }
+  50% { 
+    transform: scale(1.3);
+    background: #6366f1;
+  }
+}
+
+@keyframes connectionFlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Holographic Card */
+.holographic-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease-out;
+  overflow: hidden;
+}
+
+.holographic-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(26, 26, 46, 0.9);
+  border-radius: 15px;
+  padding: 20px;
+  height: 100%;
+}
+
+.holographic-overlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(99, 102, 241, 0.1), 
+    rgba(139, 92, 246, 0.1), 
+    transparent
+  );
+  animation: holographicSweep 3s infinite linear;
+  z-index: 1;
+}
+
+@keyframes holographicSweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.holographic-card:hover {
+  box-shadow: 
+    0 20px 40px rgba(99, 102, 241, 0.2),
+    0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .network-visualization {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .network-node-container {
+    animation-duration: 10s;
+  }
+  
+  .center-node {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .network-node {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .network-connection {
+    height: 60px;
+  }
+  
+  .animated-code-block {
+    padding: 15px;
+    font-size: 0.8em;
+  }
+}
+
+/* Utility animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}

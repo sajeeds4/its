@@ -1,0 +1,500 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './Navigation.css';
+
+const Navigation: React.FC = () => {
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  // Close menus when route changes
+  useEffect(() => {
+    setActiveMenu(null);
+  }, [location]);
+
+  // Scroll effect and nav height calculation
+  useEffect(() => {
+    const setNavHeightVar = () => {
+      const el = navRef.current;
+      if (el) {
+        const h = Math.ceil(el.getBoundingClientRect().height);
+        document.documentElement.style.setProperty('--nav-height', `${h}px`);
+      }
+    };
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 10);
+    };
+
+    setNavHeightVar();
+    handleScroll();
+
+    window.addEventListener('resize', setNavHeightVar);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('resize', setNavHeightVar);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveMenu(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleMenuToggle = (menu: string) => {
+    setActiveMenu(activeMenu === menu ? null : menu);
+  };
+    };
+
+    setNavHeightVar();
+    handleScroll();
+    
+    window.addEventListener('resize', setNavHeightVar);
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('resize', setNavHeightVar);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveMenu(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleMenuToggle = (menu: string) => {
+    setActiveMenu(activeMenu === menu ? null : menu);
+  };
+
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    if (!isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  };
+
+  // Clean up body overflow on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+  const servicesMenu = [
+    { name: 'Web Development', href: '/services/web-development' },
+    { name: 'Custom Web Development', href: '/services/custom-web-development' },
+    { name: 'WordPress', href: '/services/wordpress' },
+    { name: 'Shopify', href: '/services/shopify' },
+    { name: 'Wix', href: '/services/wix' },
+    { name: 'Cloud Services', href: '/services/cloud' },
+    { name: 'AI & Automation', href: '/services/ai-automation' },
+    { name: 'ERP Solutions', href: '/services/erp-solutions' },
+    { name: 'Networking', href: '/services/networking' },
+    { name: 'Office 365 & G Suite', href: '/services/office365-gsuite' },
+    { name: 'Data Migration & Recovery', href: '/services/data-migration-recovery' },
+  ];
+
+  const industriesMenu = [
+    { name: 'Healthcare', href: '/industries/healthcare' },
+    { name: 'Manufacturing', href: '/industries/manufacturing' },
+    { name: 'Professional Services', href: '/industries/professional-services' },
+    { name: 'Retail', href: '/industries/retail' },
+    { name: 'Small Business', href: '/industries/small-business' },
+  ];
+
+  const resourcesMenu = [
+    { name: 'Blog', href: '/blog' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Careers', href: '/careers' },
+  ];
+
+  return (
+    <>
+      <nav
+        ref={navRef}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled 
+            ? 'backdrop-glass shadow-lg border-b border-white/20' 
+            : 'bg-transparent'
+        } ${
+          hideNav ? '-translate-y-full' : 'translate-y-0'
+        }`}
+      >
+        <div className="container-xl">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            {/* Logo */}
+            <Link 
+              to="/" 
+              className="flex items-center space-x-2 text-xl lg:text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors duration-200"
+            >
+              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm lg:text-base">IT</span>
+              </div>
+              <span className="hidden sm:block">IT Solutions</span>
+              <span className="sm:hidden">ITS</span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-1">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+
+              {/* Services Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => handleMenuToggle('services')}
+                  className="nav-link flex items-center space-x-1"
+                >
+                  <span>Services</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${activeMenu === 'services' ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className={`nav-dropdown ${activeMenu === 'services' ? 'open' : ''}`}>
+                  <div className="grid grid-cols-2 gap-2 p-2 w-96">
+                    {servicesMenu.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        className="block px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md transition-colors duration-200"
+                        onClick={() => setActiveMenu(null)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Industries Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => handleMenuToggle('industries')}
+                  className="nav-link flex items-center space-x-1"
+                >
+                  <span>Industries</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${activeMenu === 'industries' ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className={`nav-dropdown ${activeMenu === 'industries' ? 'open' : ''}`}>
+                  <div className="py-2">
+                    {industriesMenu.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200"
+                        onClick={() => setActiveMenu(null)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Resources Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => handleMenuToggle('resources')}
+                  className="nav-link flex items-center space-x-1"
+                >
+                  <span>Resources</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform duration-200 ${activeMenu === 'resources' ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className={`nav-dropdown ${activeMenu === 'resources' ? 'open' : ''}`}>
+                  <div className="py-2">
+                    {resourcesMenu.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200"
+                        onClick={() => setActiveMenu(null)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <Link to="/about" className="nav-link">
+                About
+              </Link>
+
+              <Link to="/careers" className="nav-link">
+                Careers
+              </Link>
+
+              <Link to="/contact" className="nav-link">
+                Contact
+              </Link>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center space-x-3">
+              <Link 
+                to="/quick-quote" 
+                className="btn btn-outline btn-sm"
+              >
+                Quick Quote
+              </Link>
+              <Link 
+                to="/free-consultation" 
+                className="btn btn-primary btn-sm"
+              >
+                Free Consultation
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={handleMobileMenuToggle}
+              className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-gray-100 transition-colors duration-200 touch-target"
+              aria-label="Toggle mobile menu"
+            >
+              <svg
+                className={`w-6 h-6 transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-90' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="mobile-nav-overlay lg:hidden"
+          onClick={handleMobileMenuToggle}
+        />
+      )}
+
+      {/* Mobile Menu */}
+      <div className={`mobile-nav lg:hidden ${isMobileMenuOpen ? '' : 'closed'}`}>
+        <div className="flex flex-col h-full">
+          {/* Mobile Header */}
+          <div className="flex items-center justify-between p-4 border-b border-gray-200">
+            <Link 
+              to="/" 
+              className="flex items-center space-x-2 text-xl font-bold text-primary-600"
+              onClick={handleMobileMenuToggle}
+            >
+              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">IT</span>
+              </div>
+              <span>IT Solutions</span>
+            </Link>
+            <button
+              onClick={handleMobileMenuToggle}
+              className="p-2 rounded-lg text-gray-500 hover:text-gray-700 touch-target"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-2">
+            <Link 
+              to="/" 
+              className="block px-4 py-3 text-lg font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+              onClick={handleMobileMenuToggle}
+            >
+              Home
+            </Link>
+
+            {/* Mobile Services */}
+            <div>
+              <button
+                onClick={() => handleMenuToggle('mobile-services')}
+                className="w-full flex items-center justify-between px-4 py-3 text-lg font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+              >
+                <span>Services</span>
+                <svg 
+                  className={`w-5 h-5 transition-transform duration-200 ${activeMenu === 'mobile-services' ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {activeMenu === 'mobile-services' && (
+                <div className="ml-4 mt-2 space-y-1">
+                  {servicesMenu.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="block px-4 py-2 text-base text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+                      onClick={handleMobileMenuToggle}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Industries */}
+            <div>
+              <button
+                onClick={() => handleMenuToggle('mobile-industries')}
+                className="w-full flex items-center justify-between px-4 py-3 text-lg font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+              >
+                <span>Industries</span>
+                <svg 
+                  className={`w-5 h-5 transition-transform duration-200 ${activeMenu === 'mobile-industries' ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {activeMenu === 'mobile-industries' && (
+                <div className="ml-4 mt-2 space-y-1">
+                  {industriesMenu.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="block px-4 py-2 text-base text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+                      onClick={handleMobileMenuToggle}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Resources */}
+            <div>
+              <button
+                onClick={() => handleMenuToggle('mobile-resources')}
+                className="w-full flex items-center justify-between px-4 py-3 text-lg font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+              >
+                <span>Resources</span>
+                <svg 
+                  className={`w-5 h-5 transition-transform duration-200 ${activeMenu === 'mobile-resources' ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {activeMenu === 'mobile-resources' && (
+                <div className="ml-4 mt-2 space-y-1">
+                  {resourcesMenu.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="block px-4 py-2 text-base text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+                      onClick={handleMobileMenuToggle}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link 
+              to="/about" 
+              className="block px-4 py-3 text-lg font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+              onClick={handleMobileMenuToggle}
+            >
+              About
+            </Link>
+
+            <Link 
+              to="/careers" 
+              className="block px-4 py-3 text-lg font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+              onClick={handleMobileMenuToggle}
+            >
+              Careers
+            </Link>
+
+            <Link 
+              to="/contact" 
+              className="block px-4 py-3 text-lg font-medium text-gray-900 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200"
+              onClick={handleMobileMenuToggle}
+            >
+              Contact
+            </Link>
+          </div>
+
+          {/* Mobile CTA Buttons */}
+          <div className="p-4 border-t border-gray-200 space-y-3">
+            <Link 
+              to="/quick-quote" 
+              className="btn btn-outline btn-lg w-full justify-center"
+              onClick={handleMobileMenuToggle}
+            >
+              Quick Quote
+            </Link>
+            <Link 
+              to="/free-consultation" 
+              className="btn btn-primary btn-lg w-full justify-center"
+              onClick={handleMobileMenuToggle}
+            >
+              Free Consultation
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Navigation;

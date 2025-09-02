@@ -1,0 +1,384 @@
+/* Aethrix Systems Logo Styles */
+
+.aethrix-logo {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.aethrix-logo-full {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aethrix-logo-full.small {
+  gap: 8px;
+}
+
+.aethrix-logo-full.large {
+  gap: 16px;
+}
+
+/* Logo Icon - 3D Cube */
+.aethrix-logo-icon {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.aethrix-logo-icon.small {
+  width: 32px;
+  height: 32px;
+}
+
+.aethrix-logo-icon.medium {
+  width: 48px;
+  height: 48px;
+}
+
+.aethrix-logo-icon.large {
+  width: 64px;
+  height: 64px;
+}
+
+.logo-cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: logoRotate 20s infinite linear;
+  transition: all 0.3s ease;
+}
+
+.aethrix-logo:hover .logo-cube {
+  animation-duration: 5s;
+  transform: rotateX(15deg) rotateY(15deg) scale(1.1);
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(99, 102, 241, 0.9) 0%, 
+    rgba(139, 92, 246, 0.8) 50%, 
+    rgba(168, 85, 247, 0.9) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Cube faces positioning */
+.cube-front {
+  transform: translateZ(24px);
+}
+
+.cube-back {
+  transform: rotateY(180deg) translateZ(24px);
+}
+
+.cube-right {
+  transform: rotateY(90deg) translateZ(24px);
+}
+
+.cube-left {
+  transform: rotateY(-90deg) translateZ(24px);
+}
+
+.cube-top {
+  transform: rotateX(90deg) translateZ(24px);
+}
+
+.cube-bottom {
+  transform: rotateX(-90deg) translateZ(24px);
+}
+
+/* Face content */
+.cube-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  width: 60%;
+  height: 60%;
+}
+
+.grid-dot {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: gridPulse 2s infinite ease-in-out;
+}
+
+.grid-dot:nth-child(1) { animation-delay: 0s; }
+.grid-dot:nth-child(2) { animation-delay: 0.5s; }
+.grid-dot:nth-child(3) { animation-delay: 1s; }
+.grid-dot:nth-child(4) { animation-delay: 1.5s; }
+
+.cube-circuit {
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+
+.circuit-line {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  animation: circuitFlow 3s infinite ease-in-out;
+}
+
+.circuit-h {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.circuit-v {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  animation-delay: 1.5s;
+}
+
+.cube-pattern {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 70%;
+}
+
+.pattern-line {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.7);
+  animation: patternSweep 2s infinite ease-in-out;
+}
+
+.pattern-line:nth-child(1) { width: 100%; animation-delay: 0s; }
+.pattern-line:nth-child(2) { width: 60%; animation-delay: 0.3s; }
+.pattern-line:nth-child(3) { width: 80%; animation-delay: 0.6s; }
+
+.cube-network {
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+
+.network-node {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  animation: networkPulse 1.5s infinite ease-in-out;
+}
+
+.network-node:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.network-node:nth-child(2) {
+  bottom: 20%;
+  right: 20%;
+  animation-delay: 0.7s;
+}
+
+.network-connection {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: connectionRotate 4s infinite linear;
+}
+
+.cube-data {
+  display: flex;
+  gap: 2px;
+  width: 60%;
+}
+
+.data-stream {
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8), transparent);
+  animation: dataFlow 1.8s infinite ease-in-out;
+}
+
+.data-stream:nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+.cube-core {
+  width: 60%;
+  height: 60%;
+  position: relative;
+}
+
+.core-pulse {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: corePulse 2s infinite ease-in-out;
+}
+
+/* Logo glow effect */
+.logo-glow {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  right: -20%;
+  bottom: -20%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 4s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* Logo Text */
+.aethrix-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.aethrix-logo-text.small {
+  font-size: 14px;
+}
+
+.aethrix-logo-text.medium {
+  font-size: 18px;
+}
+
+.aethrix-logo-text.large {
+  font-size: 24px;
+}
+
+.logo-aethrix {
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.logo-ae {
+  position: relative;
+}
+
+.logo-ae::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  animation: underlineGlow 3s infinite ease-in-out;
+}
+
+.logo-systems {
+  font-size: 0.7em;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+  margin-top: -2px;
+}
+
+/* Animations */
+@keyframes logoRotate {
+  0% { transform: rotateX(0) rotateY(0); }
+  25% { transform: rotateX(15deg) rotateY(90deg); }
+  50% { transform: rotateX(0) rotateY(180deg); }
+  75% { transform: rotateX(-15deg) rotateY(270deg); }
+  100% { transform: rotateX(0) rotateY(360deg); }
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes circuitFlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes patternSweep {
+  0%, 100% { opacity: 0.4; transform: scaleX(0.5); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes networkPulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes connectionRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dataFlow {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes corePulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+@keyframes underlineGlow {
+  0%, 100% { opacity: 0.5; transform: scaleX(0.8); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .aethrix-logo-icon.medium {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .cube-front, .cube-back, .cube-right, .cube-left, .cube-top, .cube-bottom {
+    transform: translateZ(20px);
+  }
+  
+  .cube-right { transform: rotateY(90deg) translateZ(20px); }
+  .cube-left { transform: rotateY(-90deg) translateZ(20px); }
+  .cube-top { transform: rotateX(90deg) translateZ(20px); }
+  .cube-bottom { transform: rotateX(-90deg) translateZ(20px); }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .cube-face {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .logo-aethrix {
+    background: #6366f1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

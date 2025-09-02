@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aethrixsystems.com/sitemap.xml
+
+# Block specific paths if needed
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1
