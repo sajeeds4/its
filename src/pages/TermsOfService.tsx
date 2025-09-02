@@ -12,7 +12,7 @@ const TermsOfService: React.FC = () => (
         <p>These terms govern your use of the Aethrix Systems website and services.</p>
       </div>
     </div>
-    <div className="content-section">
+  <div className="content-section readers">
       <h2>Acceptance of Terms</h2>
       <p>By accessing or using our website, you agree to these terms. Additional terms may apply to specific services or projects.</p>
       <h2>Use of Services</h2>

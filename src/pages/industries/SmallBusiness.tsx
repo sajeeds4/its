@@ -1,8 +1,27 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 
 const SmallBusiness: React.FC = () => {
   return (
     <div className="page-container">
+      <SEO
+        title="Small & Medium Business Solutions | Aethrix Systems"
+        description="Affordable, scalable technology for SMBs: websites, CRM, cloud, cybersecurity, and analytics."
+        path="/industries/small-business"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Industries', path: '/industries' },
+          { name: 'Small Business', path: '/industries/small-business' },
+        ]}
+        type="service"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Small & Medium Business Solutions',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/industries/small-business',
+        }}
+      />
       <div className="hero-section service-hero">
         <div className="hero-content">
           <h1 id="smb-title">Small & Medium Business Solutions</h1>

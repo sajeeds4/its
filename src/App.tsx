@@ -9,6 +9,7 @@ import './App.css';
 import Navigation from './components/Navigation';
 import NeuralBackground from './components/NeuralBackground';
 import Footer from './components/Footer';
+import Breadcrumbs from './components/Breadcrumbs';
 
 // Main pages (lazy)
 const Home = lazy(() => import('./pages/Home'));
@@ -75,6 +76,8 @@ function App() {
           <Navigation />
           {/* spacer to offset fixed navbar height (uses CSS var set by Navigation) */}
           <div aria-hidden="true" style={{ height: 'var(--nav-height, 80px)' }} />
+          {/* Breadcrumbs under the navbar on non-home routes */}
+          <Breadcrumbs />
         <main id="main" className="main-content flex-grow-1">
           <Suspense fallback={<div className="container py-4 text-muted">Loading…</div>}>
           <Routes>

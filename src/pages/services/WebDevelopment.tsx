@@ -2,10 +2,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Services.css';
+import SEO from '../../components/SEO';
 
 const WebDevelopment: React.FC = () => {
   return (
     <main className="page-container" role="main">
+      <SEO
+        title="Web Development Services | Aethrix Systems"
+        description="SEO-friendly websites, Shopify stores, and custom web apps built for performance, accessibility, and growth."
+        path="/services/web-development"
+        type="service"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Web Development', path: '/services/web-development' },
+        ]}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Web Development Services',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/services/web-development',
+        }}
+      />
       {/* Hero */}
       <header className="hero-section service-hero" aria-labelledby="webdev-title">
         <div className="hero-content">
@@ -20,7 +39,7 @@ const WebDevelopment: React.FC = () => {
       {/* Overview */}
       <section className="content-section" aria-label="Service overview">
         <div className="container">
-          <article className="service-overview glass-card">
+          <article className="service-overview glass-card readers">
             <h2>Comprehensive Web Solutions for Growth</h2>
             <p>
               We design and build production-grade websites and web applications focused on measurable business outcomes. Whether you

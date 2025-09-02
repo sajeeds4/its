@@ -1,12 +1,31 @@
 import React from 'react';
 import FeatureGrid from '../../components/FeatureGrid';
 import industryData from '../../data/industries';
+import SEO from '../../components/SEO';
 
 const Retail: React.FC = () => {
   const retail = industryData.retail;
 
   return (
     <div className="page-container">
+      <SEO
+        title="Retail Technology Solutions | Aethrix Systems"
+        description="Omnichannel retail: Shopify Plus, POS integration, inventory optimization, and analytics to grow sales."
+        path="/industries/retail"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Industries', path: '/industries' },
+          { name: 'Retail', path: '/industries/retail' },
+        ]}
+        type="service"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Retail Technology Solutions',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/industries/retail',
+        }}
+      />
       <div className="hero-section service-hero">
         <div className="hero-content">
           <h1 id="retail-title">Retail Industry Solutions</h1>

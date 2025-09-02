@@ -6,18 +6,30 @@ import '../styles/glassmorphism.css';
 import ThemeToggle from './ThemeToggle';
 import { Home, Settings2, Building2, BookOpen, Users2, Puzzle, Mail } from 'lucide-react';
 import { prefetchRoute } from '../utils/prefetchRoutes';
+// Removed contrast and font size toggles per request
 
 const Navigation: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastYRef = useRef<number>(0);
+  const hiddenRef = useRef<boolean>(false);
+  const tickingRef = useRef<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLSpanElement>(null);
+  const activeMenuRef = useRef<string | null>(null);
   const location = useLocation();
 
-  // Close menus when route changes
+  // Close menus when route changes and ensure nav is visible
   useEffect(() => {
     setActiveMenu(null);
+    activeMenuRef.current = null;
+  // Force reveal on route change and sync scroll baseline
+  setHidden(false);
+  const y = typeof window !== 'undefined' ? window.scrollY : 0;
+  lastYRef.current = y;
+  setScrolled(y > 10);
     // Update active indicator on route change
     const id = requestAnimationFrame(() => {
       updateIndicator();
@@ -25,7 +37,10 @@ const Navigation: React.FC = () => {
     return () => cancelAnimationFrame(id);
   }, [location]);
 
-  // Scroll effect and nav height calculation
+  // Keep refs in sync to avoid stale closures in passive listeners
+  useEffect(() => { hiddenRef.current = hidden; }, [hidden]);
+
+  // Scroll effect: nav height var + auto-hide on scroll down
   useEffect(() => {
     const setNavHeightVar = () => {
       const el = navRef.current;
@@ -36,19 +51,60 @@ const Navigation: React.FC = () => {
     };
 
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrolled(currentScrollY > 10);
+      if (tickingRef.current) return;
+      tickingRef.current = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        setScrolled(y > 10);
+        const last = lastYRef.current || 0;
+        const delta = y - last;
+        const threshold = 80; // slightly earlier hide
+
+        // Always show when a menu is open or user is near the very top
+        if (activeMenuRef.current || y <= 8) {
+          if (hiddenRef.current) setHidden(false);
+          lastYRef.current = y;
+          tickingRef.current = false;
+          return;
+        }
+
+        // Reveal on any upward movement (prevents getting stuck hidden)
+        if (delta < -2) {
+          if (hiddenRef.current) setHidden(false);
+        } else if (y > threshold && delta > 8) {
+          // Hide only on clear downward scroll beyond threshold
+          if (!hiddenRef.current) setHidden(true);
+        }
+
+        lastYRef.current = y;
+        tickingRef.current = false;
+      });
     };
 
     setNavHeightVar();
     handleScroll();
 
+    const revealOnTopHover = (e: MouseEvent) => {
+      // Reveal when the cursor nears the top edge (usable on desktop)
+      if (e.clientY < 96 && hiddenRef.current) setHidden(false);
+    };
+
+    const revealOnTopTouch = (e: TouchEvent) => {
+      const t = e.touches && e.touches[0];
+      if (!t) return;
+      if (t.clientY < 96 && hiddenRef.current) setHidden(false);
+    };
+
     window.addEventListener('resize', setNavHeightVar);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('mousemove', revealOnTopHover, { passive: true });
+  window.addEventListener('touchstart', revealOnTopTouch, { passive: true });
 
     return () => {
-      window.removeEventListener('resize', setNavHeightVar);
-      window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', setNavHeightVar);
+  window.removeEventListener('scroll', handleScroll as any);
+  window.removeEventListener('mousemove', revealOnTopHover as any);
+  window.removeEventListener('touchstart', revealOnTopTouch as any);
     };
   }, []);
 
@@ -92,7 +148,10 @@ const Navigation: React.FC = () => {
   }, []);
 
   const handleMenuToggle = (menu: string) => {
-    setActiveMenu(activeMenu === menu ? null : menu);
+    const next = activeMenu === menu ? null : menu;
+    setActiveMenu(next);
+    activeMenuRef.current = next;
+    if (next) setHidden(false);
   };
 
   // Keyboard navigation within mega menus
@@ -116,14 +175,14 @@ const Navigation: React.FC = () => {
   };
 
   const servicesMenu = [
-    { name: 'Web Development', href: '/services/web-development' },
-    { name: 'Custom Web Development', href: '/services/web-development/custom' },
-  { name: 'WordPress', href: '/services/web-development/wordpress' },
-  { name: 'Shopify', href: '/services/web-development/shopify' },
-  { name: 'Wix', href: '/services/web-development/wix' },
+  { name: 'Web Development', href: '/services/web-development' },
+  { name: 'Custom Web Development', href: '/services/custom-web-development' },
+  { name: 'WordPress', href: '/services/wordpress' },
+  { name: 'Shopify', href: '/services/shopify' },
+  { name: 'Wix', href: '/services/wix' },
     { name: 'Cloud Services', href: '/services/cloud' },
     { name: 'AI & Automation', href: '/services/ai-automation' },
-  { name: 'ERP Solutions', href: '/services/erp' },
+  { name: 'ERP Solutions', href: '/services/erp-solutions' },
     { name: 'Networking', href: '/services/networking' },
     { name: 'Office 365 & G Suite', href: '/services/office365-gsuite' },
     { name: 'Data Migration & Recovery', href: '/services/data-migration-recovery' },
@@ -150,13 +209,13 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav
+  <nav
       ref={navRef}
-      className={`navbar navbar-expand-lg fixed-top transition-all navbar-3d ${
+    className={`navbar navbar-expand-lg fixed-top transition-all navbar-3d ${
         scrolled 
           ? 'backdrop-glass shadow-lg border-bottom border-light' 
-          : 'bg-transparent'
-      }`}
+      : 'bg-transparent'
+    } ${hidden ? 'hidden' : ''}`}
       role="navigation"
       aria-label="Primary"
     >

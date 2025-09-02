@@ -1,8 +1,27 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 
 const AIAutomation: React.FC = () => {
   return (
     <div className="page-container">
+      <SEO
+        title="AI & Automation Services | Aethrix Systems"
+        description="RPA, predictive analytics, chatbots, NLP, computer vision, and recommendation systems to streamline operations."
+        path="/services/ai-automation"
+        type="service"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'AI & Automation', path: '/services/ai-automation' },
+        ]}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'AI & Automation',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/services/ai-automation',
+        }}
+      />
       <div className="hero-section service-hero">
         <div className="hero-content">
           <h1>AI & Automation Solutions</h1>

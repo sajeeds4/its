@@ -1,7 +1,16 @@
 import React from 'react';
+import SEO from '../../../components/SEO';
 
 const Odoo: React.FC = () => (
   <div className="page-container">
+    <SEO
+      title="Odoo ERP Implementation & Customization | Aethrix Systems"
+      description="Implement, customize, and integrate Odoo across sales, inventory, manufacturing, and finance."
+      path="/services/erp/odoo"
+      type="service"
+      breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }, { name: 'ERP', path: '/services/erp-solutions' }, { name: 'Odoo', path: '/services/erp/odoo' }]}
+      jsonLd={{ '@context': 'https://schema.org', '@type': 'Service', name: 'Odoo ERP Services', provider: { '@type': 'Organization', name: 'Aethrix Systems' }, url: 'https://aethrixsystems.com/services/erp/odoo' }}
+    />
     <div className="hero-section service-hero">
       <div className="hero-content">
         <h1>Odoo ERP Services</h1>

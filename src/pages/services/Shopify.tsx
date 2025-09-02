@@ -1,10 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../components/SEO';
 import './Services.css';
 
 const Shopify: React.FC = () => {
   return (
     <main className="page-container" role="main">
+      <SEO
+        title="Shopify Development & E‑commerce | Aethrix Systems"
+        description="Custom Shopify stores, integrations, subscriptions, and performance optimization to grow revenue."
+        path="/services/shopify"
+        type="service"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Shopify', path: '/services/shopify' },
+        ]}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Shopify Development',
+          serviceType: 'E-commerce Development',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/services/shopify',
+        }}
+      />
       <header className="hero-section service-hero" aria-labelledby="shopify-title">
         <div className="hero-content">
           <h1 id="shopify-title">Shopify Development & E‑commerce</h1>

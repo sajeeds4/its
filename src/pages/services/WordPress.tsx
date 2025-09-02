@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import SEO from '../../components/SEO';
 import './Services.css';
 
 /**
@@ -21,11 +21,31 @@ import './Services.css';
 const WordPress: React.FC = () => {
   return (
     <main className="page-container" role="main">
-      {/* SEO Meta Tags */}
-      <Helmet>
-        <title>WordPress Development Services | Aethrix Systems</title>
-        <meta name="description" content="Aethrix Systems: Custom WordPress development for agencies and enterprises. Themes, WooCommerce, headless, migrations, multi-site & security. Book a free consultation." />
-      </Helmet>
+      <SEO
+        title="WordPress Development Services | Aethrix Systems"
+        description="Custom WordPress development for agencies and enterprises: themes, WooCommerce, headless, migrations, multi‑site & security."
+        path="/services/wordpress"
+        type="service"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'WordPress', path: '/services/wordpress' },
+        ]}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'WordPress Development',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          areaServed: { '@type': 'Place', name: 'Global' },
+          serviceType: 'Web Development',
+          url: 'https://aethrixsystems.com/services/wordpress',
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
+          },
+        }}
+      />
       {/* Hero */}
       <header className="hero-section service-hero" aria-labelledby="wp-title">
         <div className="hero-content">
@@ -41,7 +61,7 @@ const WordPress: React.FC = () => {
       {/* Intro / Lead */}
       <section className="content-section">
         <div className="container">
-          <article className="service-overview">
+          <article className="service-overview readers">
             <h2>Custom WordPress Solutions for Agencies & Enterprises</h2>
             <p>WordPress powers a large share of the web because it’s flexible, extendable, and easy for teams to manage. We deliver end-to-end WordPress solutions focused on measurable business outcomes: improved organic visibility, increased qualified traffic, and higher conversion rates. Whether you need a new WooCommerce store, a headless CMS for scale, or a custom plugin to support unique workflows — we design, build, secure, and operate WordPress sites that perform under real-world traffic.</p>
           </article>
@@ -51,7 +71,7 @@ const WordPress: React.FC = () => {
       <section className="content-section">
         <div className="container">
           {/* Overview - longer, SEO-friendly content (not boxed) */}
-          <article className="service-overview">
+          <article className="service-overview readers">
             <h2>Professional WordPress Solutions</h2>
             <p>
               WordPress powers a significant portion of the web because it's flexible, extendable, and easy to manage. Our WordPress

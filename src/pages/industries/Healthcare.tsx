@@ -1,8 +1,28 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 
 const Healthcare: React.FC = () => {
   return (
     <div className="page-container">
+      <SEO
+        title="Healthcare Technology Solutions | Aethrix Systems"
+        description="HIPAA‑compliant EHR, telemedicine, practice management, security, and AI diagnostics to improve outcomes."
+        path="/industries/healthcare"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Industries', path: '/industries' },
+          { name: 'Healthcare', path: '/industries/healthcare' },
+        ]}
+        type="service"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Healthcare Technology Solutions',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          areaServed: { '@type': 'Place', name: 'Global' },
+          url: 'https://aethrixsystems.com/industries/healthcare',
+        }}
+      />
       <div className="hero-section service-hero">
         <div className="hero-content">
           <h1 id="healthcare-title">Healthcare Technology Solutions</h1>

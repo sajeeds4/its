@@ -19,6 +19,9 @@ createRoot(document.getElementById('root')!).render(
 
 // Optional: react to data-theme changes and keep color-scheme in sync
 const rootEl = document.documentElement;
+// initialize user font scale
+const savedScale = localStorage.getItem('user-font-scale');
+if (savedScale) rootEl.style.setProperty('--user-font-scale', savedScale);
 const updateColorScheme = () => {
   const theme = rootEl.getAttribute('data-theme');
   if (theme === 'dark') document.documentElement.style.colorScheme = 'dark';
@@ -41,4 +44,11 @@ export function setTheme(theme: 'light' | 'dark' | 'system') {
     const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     root.style.colorScheme = dark ? 'dark' : 'light';
   }
+}
+
+// Persist font scale helper for UI controls
+export function setFontScale(scale: number) {
+  const v = String(scale);
+  localStorage.setItem('user-font-scale', v);
+  document.documentElement.style.setProperty('--user-font-scale', v);
 }

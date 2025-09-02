@@ -1,10 +1,30 @@
 import React from 'react';
 import './Wix.css';
 import { Brush, ShoppingCart, Settings, Search, BarChart2, Wrench } from 'lucide-react';
+import SEO from '../../components/SEO';
 
 const Wix: React.FC = () => {
   return (
     <div className="page-container wix-page">
+      <SEO
+        title="Wix Website Development | Aethrix Systems"
+        description="Professional Wix websites with custom designs, e‑commerce, advanced functionality, and SEO."
+        path="/services/wix"
+        type="service"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Wix', path: '/services/wix' },
+        ]}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Wix Development',
+          serviceType: 'Web Development',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/services/wix',
+        }}
+      />
       <header className="wix-hero glass-card">
         <div className="container">
           <h1>Wix Development Services</h1>

@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         slidesPerView={1}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-    navigation={window.innerWidth > 768}
+    navigation
   className="w-100 h-100"
   style={{ height: 'calc(68vh - var(--nav-height))' }}
       >
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
               </FloatingElement>
             </div>
 
-            <div className="hero-content position-relative z-2 text-center px-3">
+      <div className="hero-content hero-surface position-relative z-2 text-center px-3 py-4 py-md-5">
               <h1 className="hero-title display-1 fw-bold mb-3">
                 Transform Your Business with Smarter IT Solutions
               </h1>
@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
               <div className="hero-square-3"></div>
             </div>
 
-            <div className="hero-content position-relative z-2 text-center px-3">
+            <div className="hero-content hero-surface position-relative z-2 text-center px-3 py-4 py-md-5">
               <h1 className="hero-title display-1 fw-bold mb-3">
                 Scale Faster with{' '}
                 <span className="text-gradient hero-highlight-blue">
@@ -137,7 +137,7 @@ const Hero: React.FC = () => {
               <div className="hero-circle-7"></div>
             </div>
 
-            <div className="hero-content position-relative z-2 text-center px-3">
+    <div className="hero-content hero-surface position-relative z-2 text-center px-3 py-4 py-md-5">
               <h1 className="hero-title display-1 fw-bold mb-3">
                 Streamline Operations with{' '}
                 <span className="text-gradient hero-highlight-green">
@@ -149,7 +149,7 @@ const Hero: React.FC = () => {
               </p>
               <div className="hero-actions d-flex flex-column flex-sm-row gap-3 justify-content-center">
                 <Link 
-                  to="/services/erp-solutions" 
+      to="/services/erp" 
                   className="btn btn-primary btn-lg px-4 py-3 shadow hero-btn-primary"
                 >
                   <span className="d-none d-sm-inline">Explore ERP</span>

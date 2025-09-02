@@ -1,8 +1,28 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 
 const Office365GSuite: React.FC = () => {
   return (
     <div className="page-container">
+      <SEO
+        title="Office 365 & Google Workspace Services | Aethrix Systems"
+        description="Migrate, configure, and secure Microsoft 365 or Google Workspace. Training, security, compliance, and ongoing support."
+        path="/services/office365-gsuite"
+        type="service"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Office 365 & Google Workspace', path: '/services/office365-gsuite' },
+        ]}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Office 365 & Google Workspace',
+          serviceType: 'Cloud Productivity',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/services/office365-gsuite',
+        }}
+      />
       <div className="hero-section service-hero">
         <div className="hero-content">
           <h1>Office 365 & Google Workspace Solutions</h1>

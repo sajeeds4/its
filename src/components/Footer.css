@@ -34,6 +34,12 @@
   overflow: hidden;
 }
 
+/* Constrain overall footer width a bit more than main containers */
+.footer-section > .container,
+.footer-bottom > .container {
+  max-width: 1140px; /* slightly narrower than typical 1320 */
+}
+
 .footer-section::before {
   content: '';
   position: absolute;
@@ -129,6 +135,10 @@
   border-radius: 0 0 2.5rem 2.5rem;
   box-shadow: 0 2px 12px rgba(99,102,241,0.10);
 }
+
+/* Add subtle separation between brand card and link columns via inner spacing only */
+.footer-section .col-lg-2 { padding-top: 0.35rem; }
+.footer-section ul.list-unstyled li + li { margin-top: 0.35rem; }
 
 .footer-bottom .footer-link {
   font-size: 1rem;

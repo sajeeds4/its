@@ -1,10 +1,29 @@
 import React from 'react';
 import './CustomWebDevelopment.css';
 import { Building, ShoppingCart, Cloud, Lock, Book, Calendar } from 'lucide-react';
+import SEO from '../../components/SEO';
 
 const CustomWebDevelopment: React.FC = () => {
   return (
     <div className="page-container">
+      <SEO
+        title="Custom Web Development | Aethrix Systems"
+        description="Full-stack, scalable websites and apps with deep integrations, performance, and SEO built-in."
+        path="/services/custom-web-development"
+        type="service"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Custom Web Development', path: '/services/custom-web-development' },
+        ]}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Custom Web Development',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/services/custom-web-development',
+        }}
+      />
       {/* Hero */}
       <header className="hero-section service-hero hero-animated" aria-labelledby="custom-title">
         <div className="hero-background" aria-hidden />
@@ -18,7 +37,7 @@ const CustomWebDevelopment: React.FC = () => {
       </header>
 
       <main className="content-section">
-        <div className="container">
+        <div className="container readers">
           {/* 2. Why Custom Development */}
           <section id="why" className="why-section two-col">
             <div className="col text-col">

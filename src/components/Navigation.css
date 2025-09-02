@@ -9,6 +9,12 @@
   border-bottom: 1px solid transparent;
 }
 
+/* Auto-hide on scroll down */
+.navbar.hidden {
+  transform: translateY(calc(-1 * var(--nav-height)));
+  opacity: 0.98;
+}
+
 /* Backdrop glass effect for scrolled navbar */
 .backdrop-glass {
   background: rgba(255, 255, 255, 0.08) !important;

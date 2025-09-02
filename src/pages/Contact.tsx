@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -119,248 +120,182 @@ const Contact: React.FC = () => {
         </script>
       </Helmet>
       
-      <div className="min-h-screen bg-gray-50">
-        <section className="section">
+      <div className="bg-body-tertiary">
+        <section className="py-5">
           <div className="container">
             {/* Header */}
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Contact Us
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="text-center mb-4">
+              <span className="badge rounded-pill text-bg-primary-subtle px-3 py-2 mb-3">
+                Business Hours: Mon–Fri, 9am–6pm
+              </span>
+              <h1 className="display-5 fw-bold mb-2">Contact Us</h1>
+              <p className="lead readers mx-auto" style={{ maxWidth: '68ch' }}>
                 Ready to transform your business? Let's discuss how we can help you achieve your technology goals.
               </p>
             </div>
-            
-            <div className="grid lg:grid-cols-2 gap-16">
+
+            <div className="row g-4 g-lg-5 align-items-start">
               {/* Contact Information */}
-              <div className="space-y-8" aria-label="Contact information">
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-                  <div className="space-y-4 text-lg">
-                    <div>
-                      <span className="font-semibold text-gray-900">Email:</span>{' '}
-                      <a 
-                        href="mailto:info@aethrixsystems.com" 
-                        aria-label="Email Aethrix Systems at info@aethrixsystems.com"
-                        className="text-primary-600 hover:text-primary-700 transition-colors duration-200"
-                      >
-                        info@aethrixsystems.com
-                      </a>
-                    </div>
-                    <div>
-                      <span className="font-semibold text-gray-900">Mobile:</span>{' '}
-                      <a 
-                        href="tel:+19175649475" 
-                        aria-label="Call Aethrix Systems at +1 917 564 9475"
-                        className="text-primary-600 hover:text-primary-700 transition-colors duration-200"
-                      >
-                        +1 917 564 9475
-                      </a>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mt-6 leading-relaxed">
-                    We'd love to hear about your project and discuss how our technology solutions 
-                    can help drive your business forward. Contact us today for a free consultation.
+              <div className="col-lg-5">
+                <div className="glass-card p-4 p-md-4 h-100">
+                  <h2 className="h3 fw-bold mb-3 text-center text-lg-start">Get in touch</h2>
+                  <p className="mb-4 readers" style={{ maxWidth: '48ch' }}>
+                    We'd love to hear about your project. Reach us directly or send a message—typically we reply within one business day.
                   </p>
-                </div>
-                
-                {/* Contact Methods Grid */}
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center" aria-hidden="true">
-                        <i className="fas fa-envelope text-primary-600 text-xl"></i>
-                      </div>
+                  <ul className="list-unstyled d-grid gap-3">
+                    <li className="d-flex align-items-start gap-3">
+                      <Mail className="text-primary flex-shrink-0" aria-hidden size={22} />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                        <a 
-                          href="mailto:info@aethrixsystems.com"
-                          className="text-primary-600 hover:text-primary-700 transition-colors"
-                          aria-label="Send email to info@aethrixsystems.com"
-                        >
+                        <div className="fw-semibold">Email</div>
+                        <a href="mailto:info@aethrixsystems.com" className="link-primary" aria-label="Email info@aethrixsystems.com">
                           info@aethrixsystems.com
                         </a>
                       </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center" aria-hidden="true">
-                        <i className="fas fa-phone text-primary-600 text-xl"></i>
-                      </div>
+                    </li>
+                    <li className="d-flex align-items-start gap-3">
+                      <Phone className="text-primary flex-shrink-0" aria-hidden size={22} />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                        <a 
-                          href="tel:+19175649475"
-                          className="text-primary-600 hover:text-primary-700 transition-colors"
-                          aria-label="Call +1 917 564 9475"
-                        >
+                        <div className="fw-semibold">Phone</div>
+                        <a href="tel:+19175649475" className="link-primary" aria-label="Call +1 917 564 9475">
                           +1 917 564 9475
                         </a>
                       </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center" aria-hidden="true">
-                        <i className="fas fa-map-marker-alt text-primary-600 text-xl"></i>
-                      </div>
+                    </li>
+                    <li className="d-flex align-items-start gap-3">
+                      <MapPin className="text-primary flex-shrink-0" aria-hidden size={22} />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-                        <p className="text-gray-600">Long Island, New York</p>
+                        <div className="fw-semibold">Location</div>
+                        <div className="text-muted">Long Island, New York</div>
                       </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center" aria-hidden="true">
-                        <i className="fas fa-clock text-primary-600 text-xl"></i>
-                      </div>
+                    </li>
+                    <li className="d-flex align-items-start gap-3">
+                      <Clock className="text-primary flex-shrink-0" aria-hidden size={22} />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                        <p className="text-gray-600">Monday - Friday: 9AM - 6PM</p>
+                        <div className="fw-semibold">Business hours</div>
+                        <div className="text-muted">Mon–Fri: 9:00am – 6:00pm</div>
                       </div>
-                    </div>
-                  </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              
+
               {/* Contact Form */}
-              <div className="bg-white rounded-2xl shadow-lg p-8">
-                <form 
-                  onSubmit={onSubmit}
-                  role="form"
-                  aria-label="Contact form"
-                  className="space-y-6"
-                  noValidate
-                >
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="form-label">Name *</label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={values.name}
-                        onChange={onChange}
-                        onBlur={onBlur}
-                        required
-                        aria-required="true"
-                        aria-describedby="name-error"
-                        aria-invalid={!!(touched.name && errors.name)}
-                        aria-label="Your full name"
-                        className="form-input"
-                      />
-                      {touched.name && errors.name && (<div id="name-error" className="form-error" role="alert">{errors.name}</div>)}
+              <div className="col-lg-7">
+                <div className="card shadow-sm border-0 p-3 p-md-4">
+                  <form onSubmit={onSubmit} role="form" aria-label="Contact form" noValidate>
+                    <div className="row g-3">
+                      <div className="col-sm-6">
+                        <label htmlFor="name" className="form-label">Name *</label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={values.name}
+                          onChange={onChange}
+                          onBlur={onBlur}
+                          required
+                          aria-required="true"
+                          aria-describedby="name-error"
+                          aria-invalid={!!(touched.name && errors.name)}
+                          aria-label="Your full name"
+                          className="form-input"
+                        />
+                        {touched.name && errors.name && (<div id="name-error" className="form-error" role="alert">{errors.name}</div>)}
+                      </div>
+                      <div className="col-sm-6">
+                        <label htmlFor="email" className="form-label">Email *</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={values.email}
+                          onChange={onChange}
+                          onBlur={onBlur}
+                          required
+                          aria-required="true"
+                          aria-describedby="email-error"
+                          aria-invalid={!!(touched.email && errors.email)}
+                          aria-label="Your email address"
+                          className="form-input"
+                        />
+                        {touched.email && errors.email && (<div id="email-error" className="form-error" role="alert">{errors.email}</div>)}
+                      </div>
+                      <div className="col-sm-6">
+                        <label htmlFor="company" className="form-label">Company</label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          value={values.company}
+                          onChange={onChange}
+                          onBlur={onBlur}
+                          aria-label="Your company name"
+                          className="form-input"
+                        />
+                      </div>
+                      <div className="col-sm-6">
+                        <label htmlFor="phone" className="form-label">Phone</label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={values.phone}
+                          onChange={onChange}
+                          onBlur={onBlur}
+                          aria-invalid={!!(touched.phone && errors.phone)}
+                          aria-describedby="phone-error"
+                          aria-label="Your phone number"
+                          className="form-input"
+                        />
+                        {touched.phone && errors.phone && (<div id="phone-error" className="form-error" role="alert">{errors.phone}</div>)}
+                      </div>
+                      <div className="col-12">
+                        <label htmlFor="service" className="form-label">Service Interested In</label>
+                        <select
+                          id="service"
+                          name="service"
+                          value={values.service}
+                          onChange={onChange}
+                          onBlur={onBlur}
+                          aria-label="Select service you're interested in"
+                          className="form-input"
+                        >
+                          <option value="">Select a service</option>
+                          <option value="web-development">Web Development</option>
+                          <option value="erp-solutions">ERP Solutions</option>
+                          <option value="cloud-solutions">Cloud Solutions</option>
+                          <option value="ai-automation">AI Automation</option>
+                          <option value="networking">Networking</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                      <div className="col-12">
+                        <label htmlFor="message" className="form-label">Message *</label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows={5}
+                          value={values.message}
+                          onChange={onChange}
+                          onBlur={onBlur}
+                          placeholder="Tell us about your project and how we can help..."
+                          required
+                          aria-required="true"
+                          aria-describedby="message-error"
+                          aria-invalid={!!(touched.message && errors.message)}
+                          aria-label="Your message describing your project needs"
+                          className="form-input"
+                        ></textarea>
+                        {touched.message && errors.message && (<div id="message-error" className="form-error" role="alert">{errors.message}</div>)}
+                      </div>
+                      <div className="col-12 pt-2">
+                        <button type="submit" className="btn btn-primary btn-lg w-100" aria-label="Send your message to Aethrix Systems">
+                          Send Message
+                        </button>
+                      </div>
                     </div>
-                    
-                    <div>
-                      <label htmlFor="email" className="form-label">Email *</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={values.email}
-                        onChange={onChange}
-                        onBlur={onBlur}
-                        required
-                        aria-required="true"
-                        aria-describedby="email-error"
-                        aria-invalid={!!(touched.email && errors.email)}
-                        aria-label="Your email address"
-                        className="form-input"
-                      />
-                      {touched.email && errors.email && (<div id="email-error" className="form-error" role="alert">{errors.email}</div>)}
-                    </div>
-                  </div>
-                  
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="company" className="form-label">Company</label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={values.company}
-                        onChange={onChange}
-                        onBlur={onBlur}
-                        aria-label="Your company name"
-                        className="form-input"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="phone" className="form-label">Phone</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={values.phone}
-                        onChange={onChange}
-                        onBlur={onBlur}
-                        aria-invalid={!!(touched.phone && errors.phone)}
-                        aria-describedby="phone-error"
-                        aria-label="Your phone number"
-                        className="form-input"
-                      />
-                      {touched.phone && errors.phone && (<div id="phone-error" className="form-error" role="alert">{errors.phone}</div>)}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="service" className="form-label">Service Interested In</label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={values.service}
-                      onChange={onChange}
-                      onBlur={onBlur}
-                      aria-label="Select service you're interested in"
-                      className="form-input"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="web-development">Web Development</option>
-                      <option value="erp-solutions">ERP Solutions</option>
-                      <option value="cloud-solutions">Cloud Solutions</option>
-                      <option value="ai-automation">AI Automation</option>
-                      <option value="networking">Networking</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="form-label">Message *</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={values.message}
-                      onChange={onChange}
-                      onBlur={onBlur}
-                      placeholder="Tell us about your project and how we can help..."
-                      required
-                      aria-required="true"
-                      aria-describedby="message-error"
-                      aria-invalid={!!(touched.message && errors.message)}
-                      aria-label="Your message describing your project needs"
-                      className="form-input resize-none"
-                    ></textarea>
-                    {touched.message && errors.message && (<div id="message-error" className="form-error" role="alert">{errors.message}</div>)}
-                  </div>
-                  
-                  <button 
-                    type="submit" 
-                    className="btn btn-primary w-full"
-                    disabled={!isValid}
-                    aria-label="Send your message to Aethrix Systems"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

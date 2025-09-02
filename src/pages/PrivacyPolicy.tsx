@@ -12,7 +12,7 @@ const PrivacyPolicy: React.FC = () => (
         <p>Your privacy is important to us. This policy describes how Aethrix Systems collects, uses, and protects your information.</p>
       </div>
     </div>
-    <div className="content-section">
+  <div className="content-section readers">
       <h2>Information We Collect</h2>
       <ul>
         <li><strong>Personal Information:</strong> Name, email, phone, and other contact details you provide via forms or communication.</li>

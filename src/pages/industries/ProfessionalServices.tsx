@@ -1,8 +1,27 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 
 const ProfessionalServices: React.FC = () => {
   return (
     <div className="page-container">
+      <SEO
+        title="Professional Services Technology | Aethrix Systems"
+        description="Client management, time & billing, document management, security, and BI for law, accounting, and consulting firms."
+        path="/industries/professional-services"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Industries', path: '/industries' },
+          { name: 'Professional Services', path: '/industries/professional-services' },
+        ]}
+        type="service"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Professional Services Technology',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/industries/professional-services',
+        }}
+      />
       <div className="hero-section service-hero">
         <div className="hero-content">
           <h1 id="professional-title">Professional Services Technology</h1>

@@ -1,7 +1,16 @@
 import React from 'react';
+import SEO from '../../../components/SEO';
 
 const RepairShppr: React.FC = () => (
   <div className="page-container">
+    <SEO
+      title="RepairShppr ERP Solutions | Aethrix Systems"
+      description="Setup and customization for repair shop management: tickets, inventory, and invoicing."
+      path="/services/erp/repairshppr"
+      type="service"
+      breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }, { name: 'ERP', path: '/services/erp-solutions' }, { name: 'RepairShppr', path: '/services/erp/repairshppr' }]}
+      jsonLd={{ '@context': 'https://schema.org', '@type': 'Service', name: 'RepairShppr Solutions', provider: { '@type': 'Organization', name: 'Aethrix Systems' }, url: 'https://aethrixsystems.com/services/erp/repairshppr' }}
+    />
     <div className="hero-section service-hero">
       <div className="hero-content">
         <h1>RepairShppr Solutions</h1>

@@ -1,6 +1,7 @@
 /* Bootstrap-compatible utility helpers */
 :root {
   --focus-ring: 3px rgba(124,58,237,0.18);
+  --user-font-scale: 1; /* user-adjustable font scale */
 }
 
 /* Custom utility classes */
@@ -30,6 +31,59 @@
   outline: 3px solid rgba(var(--primary-rgb), 0.3);
   outline-offset: 3px;
 }
+
+/* Stronger, consistent focus rings */
+:focus-visible {
+  outline: 3px solid rgba(99,102,241,0.55);
+  outline-offset: 3px;
+}
+
+/* High-contrast mode */
+[data-contrast="high"] {
+  --bg: #ffffff;
+  --text: #0a0a0a;
+  --text-muted: #111827;
+  --border: #111827;
+  --primary: #000000;
+  --primary-dark: #000000;
+}
+[data-contrast="high"] * { box-shadow: none !important; }
+[data-contrast="high"] .btn { border-width: 2px !important; }
+
+/* Apply user font scale to base */
+html, body { font-size: calc(1rem * var(--user-font-scale)); }
+
+/* Readability helpers */
+.measure { max-width: 66ch; }
+.measure-wide { max-width: 80ch; }
+.tracking-slight { letter-spacing: 0.01em; }
+.wordspace-slight { word-spacing: 0.02em; }
+/* Long-form reader layout: narrower measure, airy line-height, comfy spacing */
+.readers {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.readers p { line-height: 1.75; }
+.readers h2, .readers h3 { margin-top: 1.75rem; }
+.readers ul, .readers ol { padding-left: 1.25rem; }
+
+/* Touch targets */
+.touch-target { min-height: 44px; min-width: 44px; }
+
+/* Color-independent statuses */
+.status-success::before, .status-error::before, .status-warning::before {
+  content: '';
+  display: inline-block;
+  width: 10px; height: 10px; margin-right: 8px;
+  border-radius: 50%; border: 2px solid currentColor;
+}
+.status-success { color: #166534; }
+.status-error { color: #991b1b; }
+.status-warning { color: #92400e; }
+
+/* Anchor targets don't hide under sticky nav */
+*:target { scroll-margin-top: calc(var(--nav-height, 80px) + 12px); }
 
 /* Visually hidden until focused (for skip links) */
 .visually-hidden-focusable:not(:focus):not(:focus-within) {

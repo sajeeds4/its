@@ -1,7 +1,27 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 
 const Networking: React.FC = () => (
   <div className="page-container">
+    <SEO
+      title="Networking Services | Secure LAN, SD‑WAN, Wi‑Fi | Aethrix Systems"
+      description="Design, secure, and operate reliable networks: LAN/WAN, SD‑WAN, Wi‑Fi, firewalls, IDS/IPS, and SRE monitoring."
+      path="/services/networking"
+      type="service"
+      breadcrumbs={[
+        { name: 'Home', path: '/' },
+        { name: 'Services', path: '/services' },
+        { name: 'Networking', path: '/services/networking' },
+      ]}
+      jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Networking Services',
+        serviceType: 'IT Networking',
+        provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+        url: 'https://aethrixsystems.com/services/networking',
+      }}
+    />
     <div className="hero-section service-hero">
       <div className="hero-content">
         <h1>Networking Services</h1>

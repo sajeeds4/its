@@ -1,8 +1,27 @@
 import React from 'react';
+import SEO from '../../components/SEO';
 
 const Manufacturing: React.FC = () => {
   return (
     <div className="page-container">
+      <SEO
+        title="Manufacturing Technology Solutions | Aethrix Systems"
+        description="Industry 4.0, ERP, IoT, analytics, quality and supply chain systems to optimize production and reduce costs."
+        path="/industries/manufacturing"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Industries', path: '/industries' },
+          { name: 'Manufacturing', path: '/industries/manufacturing' },
+        ]}
+        type="service"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Manufacturing Technology Solutions',
+          provider: { '@type': 'Organization', name: 'Aethrix Systems' },
+          url: 'https://aethrixsystems.com/industries/manufacturing',
+        }}
+      />
       <div className="hero-section service-hero">
         <div className="hero-content">
           <h1 id="manufacturing-title">Manufacturing Technology Solutions</h1>

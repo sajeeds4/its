@@ -40,9 +40,9 @@ const Footer: React.FC = () => {
     <footer className="bg-dark text-white footer-section">
       {/* Main Footer */}
       <div className="container py-4">
-        <div className="row g-3">
+  <div className="row g-3 align-items-start">
           {/* Brand Section */}
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className="d-flex align-items-center mb-4">
               <AethrixLogo size="medium" variant="text" />
             </div>
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Services */}
-          <div className="col-lg-2 col-md-6 col-6">
+          <div className="col-lg-3 col-md-6 col-6 col-xl-2">
             <h5 className="footer-heading mb-3">Services</h5>
             <ul className="list-unstyled">
               {footerSections.services.map((item) => (
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Industries */}
-          <div className="col-lg-2 col-md-6 col-6">
+          <div className="col-lg-3 col-md-6 col-6 col-xl-2">
             <h5 className="footer-heading mb-3">Industries</h5>
             <ul className="list-unstyled">
               {footerSections.industries.map((item) => (
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Company */}
-          <div className="col-lg-2 col-md-6 col-6">
+          <div className="col-lg-3 col-md-6 col-6 col-xl-2">
             <h5 className="footer-heading mb-3">Company</h5>
             <ul className="list-unstyled">
               {footerSections.company.map((item) => (
@@ -151,7 +151,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Resources */}
-          <div className="col-lg-2 col-md-6 col-6">
+          <div className="col-lg-3 col-md-6 col-6 col-xl-2">
             <h5 className="footer-heading mb-3">Resources</h5>
             <ul className="list-unstyled">
               {footerSections.resources.map((item) => (

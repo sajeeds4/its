@@ -1,7 +1,16 @@
 import React from 'react';
+import SEO from '../../../components/SEO';
 
 const LoadDepot: React.FC = () => (
   <div className="page-container">
+    <SEO
+      title="LoadDepot ERP Solutions | Aethrix Systems"
+      description="Digital workflows for logistics, dispatching, and fleet operations with LoadDepot integrations."
+      path="/services/erp/loaddepot"
+      type="service"
+      breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }, { name: 'ERP', path: '/services/erp-solutions' }, { name: 'LoadDepot', path: '/services/erp/loaddepot' }]}
+      jsonLd={{ '@context': 'https://schema.org', '@type': 'Service', name: 'LoadDepot Solutions', provider: { '@type': 'Organization', name: 'Aethrix Systems' }, url: 'https://aethrixsystems.com/services/erp/loaddepot' }}
+    />
     <div className="hero-section service-hero">
       <div className="hero-content">
         <h1>LoadDepot Solutions</h1>
